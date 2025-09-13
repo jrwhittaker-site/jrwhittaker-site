@@ -1,7 +1,7 @@
-import type { Config } from "tailwindcss"
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ["class"],
-  content: ["./src/app/**/*.{ts,tsx}","./src/components/**/*.{ts,tsx}"],
+  content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
   theme: {
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
     extend: {
@@ -19,8 +19,7 @@ const config: Config = {
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" }
       },
       borderRadius: { lg: "1rem", md: "0.875rem", sm: "0.75rem" }
-    },
+    }
   },
-  plugins: [],
+  plugins: []
 }
-export default config

@@ -11,6 +11,42 @@ import projects from "@/data/projects.json";
 import talks from "@/data/talks.json";
 import about from "@/data/about.json";
 
+const Section = ({
+  id,
+  title,
+  eyebrow,
+  children,
+}: {
+  id: string;
+  title: string;
+  eyebrow?: string;
+  children: React.ReactNode;
+}) => (
+  <section id={id} className="max-w-6xl mx-auto px-6 py-20">
+    <div className="mb-10">
+      {eyebrow && (
+        <p className="text-sm tracking-widest uppercase text-muted-foreground mb-2">
+          {eyebrow}
+        </p>
+      )}
+      <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">{title}</h2>
+    </div>
+    {children}
+  </section>
+);
+"use client";
+
+import React, { useState, useMemo, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Film, Mail, Linkedin, ArrowRight, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+import contact from "@/data/contact.json";
+import projects from "@/data/projects.json";
+import talks from "@/data/talks.json";
+import about from "@/data/about.json";
+
 const Section = ({ id, title, eyebrow, children }: { id: string; title: string; eyebrow?: string; children: React.ReactNode }) => (
   <section id={id} className="max-w-6xl mx-auto px-6 py-20">
     <div className="mb-10">
