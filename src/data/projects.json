@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "absolut-doc",
+    "title": "ABSOLUT / Art of the Ad",
+    "kind": "Doc",
+    "year": 2025,
+    "blurb": "Three-decade print campaign revisited through an artist-first lens.",
+    "href": "#"
+  },
+  {
+    "slug": "faloe-foundry",
+    "title": "Faloe Foundry",
+    "kind": "Client",
+    "year": 2025,
+    "blurb": "Hybrid production\u2013education model activating sound stages.",
+    "href": "#"
+  },
+  {
+    "slug": "sony-3d",
+    "title": "Sony 3D Short",
+    "kind": "VR/3D",
+    "year": 2012,
+    "blurb": "Stereoscopic short recognized by the Advanced Imaging Society.",
+    "href": "#"
+  },
+  {
+    "slug": "vr-dept",
+    "title": "VR Department Build (NYFA)",
+    "kind": "VR/3D",
+    "year": 2018,
+    "blurb": "Built curriculum and productions for immersive storytelling.",
+    "href": "#"
+  },
+  {
+    "slug": "northwell-sim",
+    "title": "Northwell Health Simulations",
+    "kind": "Client",
+    "year": 2021,
+    "blurb": "Cinematic training modules with measurable outcomes.",
+    "href": "#"
+  },
+  {
+    "slug": "global-workshops",
+    "title": "Global Directing Workshops",
+    "kind": "Workshops",
+    "year": 2024,
+    "blurb": "Hands-on intensives across 20+ countries.",
+    "href": "#"
+  }
+]
