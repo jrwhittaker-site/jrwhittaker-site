@@ -174,6 +174,12 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0 56px;
+      align-items: start;
+    }
+
+    .work-col {
+      display: flex;
+      flex-direction: column;
     }
 
     .work-group {
@@ -427,6 +433,10 @@
       .work-groups {
         grid-template-columns: 1fr;
       }
+
+      .work-col {
+        display: contents;
+      }
     }
 
     @media (max-width: 768px) {
@@ -549,143 +559,148 @@
 
     <div class="work-groups">
 
-      <!-- Col 1 ── Documentary & Broadcast -->
-      <div class="work-group">
-        <p class="work-category">Documentary &amp; Broadcast</p>
-        <ul class="work-list">
-          <li>
-            <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
-            <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
-          </li>
-          <li>
-            <span class="work-title">The Pulse</span>
-            <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
-          </li>
-          <li>
-            <span class="work-title">Mater Iniciativa</span>
-            <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
-          </li>
-          <li>
-            <span class="work-title">The Phinal Show</span>
-            <span class="work-detail">Director &mdash; Documentary Short, Phish final concert, Coventry VT, 2004</span>
-          </li>
-        </ul>
+      <!-- Left column: Documentary & Broadcast, Commercial & Broadcast -->
+      <div class="work-col">
+
+        <div class="work-group">
+          <p class="work-category">Documentary &amp; Broadcast</p>
+          <ul class="work-list">
+            <li>
+              <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
+              <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
+            </li>
+            <li>
+              <span class="work-title">The Pulse</span>
+              <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
+            </li>
+            <li>
+              <span class="work-title">Mater Iniciativa</span>
+              <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
+            </li>
+            <li>
+              <span class="work-title">The Phinal Show</span>
+              <span class="work-detail">Director &mdash; Documentary Short, Phish final concert, Coventry VT, 2004</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="work-group">
+          <p class="work-category">Commercial &amp; Broadcast</p>
+          <ul class="work-list">
+            <li>
+              <span class="work-title">Venus by Gillette</span>
+              <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
+            </li>
+            <li>
+              <span class="work-title">Hyundai Equus</span>
+              <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
+            </li>
+            <li>
+              <span class="work-title">Modelo Especial</span>
+              <span class="work-detail">Director &mdash; Featuring Clint Dempsey, 2011</span>
+            </li>
+            <li>
+              <span class="work-title">Nissan Juke</span>
+              <span class="work-detail">Director &mdash; 2011</span>
+            </li>
+            <li>
+              <span class="work-title">NBA All-Star Promo</span>
+              <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
+            </li>
+            <li>
+              <span class="work-title">Anabel Mobile</span>
+              <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
 
-      <!-- Col 2 ── Commercial & Broadcast -->
-      <div class="work-group">
-        <p class="work-category">Commercial &amp; Broadcast</p>
-        <ul class="work-list">
-          <li>
-            <span class="work-title">Venus by Gillette</span>
-            <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
-          </li>
-          <li>
-            <span class="work-title">Hyundai Equus</span>
-            <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
-          </li>
-          <li>
-            <span class="work-title">Modelo Especial</span>
-            <span class="work-detail">Director &mdash; Featuring Clint Dempsey, 2011</span>
-          </li>
-          <li>
-            <span class="work-title">Nissan Juke</span>
-            <span class="work-detail">Director &mdash; 2011</span>
-          </li>
-          <li>
-            <span class="work-title">NBA All-Star Promo</span>
-            <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
-          </li>
-          <li>
-            <span class="work-title">Anabel Mobile</span>
-            <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
-          </li>
-        </ul>
-      </div>
+      <!-- Right column: Narrative, Music Video, Branded Content -->
+      <div class="work-col">
 
-      <!-- Col 1 ── Narrative -->
-      <div class="work-group">
-        <p class="work-category">Narrative</p>
-        <ul class="work-list">
-          <li>
-            <span class="work-title">Train Baby</span>
-            <span class="work-detail">Producer &mdash; Amazon Prime</span>
-          </li>
-          <li>
-            <span class="work-title">America Here We Come</span>
-            <span class="work-detail">Producer &mdash; Netflix</span>
-          </li>
-          <li>
-            <span class="work-title">Down East</span>
-            <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
-          </li>
-          <li>
-            <span class="work-title">Kristy's Lament</span>
-            <span class="work-detail">Director &mdash; Short Musical featuring Broadway star Kristy Cates, 2019</span>
-          </li>
-          <li>
-            <span class="work-title">Inhale Exhale</span>
-            <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
-          </li>
-          <li>
-            <span class="work-title">A Modo Suo</span>
-            <span class="work-detail">Director &mdash; Short Film, 2026</span>
-          </li>
-          <li>
-            <span class="work-title">Hidden Love</span>
-            <span class="work-detail">Director &mdash; Short Film, 2023</span>
-          </li>
-          <li>
-            <span class="work-title">Emilia</span>
-            <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
-          </li>
-          <li>
-            <span class="work-title">Slumberland</span>
-            <span class="work-detail">Director &mdash; Short Film, 2008</span>
-          </li>
-        </ul>
-      </div>
+        <div class="work-group">
+          <p class="work-category">Narrative</p>
+          <ul class="work-list">
+            <li>
+              <span class="work-title">Train Baby</span>
+              <span class="work-detail">Producer &mdash; Amazon Prime</span>
+            </li>
+            <li>
+              <span class="work-title">America Here We Come</span>
+              <span class="work-detail">Producer &mdash; Netflix</span>
+            </li>
+            <li>
+              <span class="work-title">Down East</span>
+              <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
+            </li>
+            <li>
+              <span class="work-title">Kristy's Lament</span>
+              <span class="work-detail">Director &mdash; Short Musical featuring Broadway star Kristy Cates, 2019</span>
+            </li>
+            <li>
+              <span class="work-title">Inhale Exhale</span>
+              <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
+            </li>
+            <li>
+              <span class="work-title">A Modo Suo</span>
+              <span class="work-detail">Director &mdash; Short Film, 2026</span>
+            </li>
+            <li>
+              <span class="work-title">Hidden Love</span>
+              <span class="work-detail">Director &mdash; Short Film, 2023</span>
+            </li>
+            <li>
+              <span class="work-title">Emilia</span>
+              <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
+            </li>
+            <li>
+              <span class="work-title">Slumberland</span>
+              <span class="work-detail">Director &mdash; Short Film, 2008</span>
+            </li>
+          </ul>
+        </div>
 
-      <!-- Col 2 ── Music Video -->
-      <div class="work-group">
-        <p class="work-category">Music Video</p>
-        <ul class="work-list">
-          <li>
-            <span class="work-title">Luv U Baby</span>
-            <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
-          </li>
-          <li>
-            <span class="work-title">Unborn Child</span>
-            <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
-          </li>
-          <li>
-            <span class="work-title">BuzzSessions</span>
-            <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
-          </li>
-        </ul>
-      </div>
+        <div class="work-group">
+          <p class="work-category">Music Video</p>
+          <ul class="work-list">
+            <li>
+              <span class="work-title">Luv U Baby</span>
+              <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
+            </li>
+            <li>
+              <span class="work-title">Unborn Child</span>
+              <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
+            </li>
+            <li>
+              <span class="work-title">BuzzSessions</span>
+              <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
+            </li>
+          </ul>
+        </div>
 
-      <!-- Col 1 ── Branded Content -->
-      <div class="work-group">
-        <p class="work-category">Branded Content</p>
-        <ul class="work-list">
-          <li>
-            <span class="work-title">Defender Bar</span>
-            <span class="work-detail">Director &mdash; 2026</span>
-          </li>
-          <li>
-            <span class="work-title">Fort Hamilton Gin</span>
-            <span class="work-detail">Director &mdash; 2025</span>
-          </li>
-          <li>
-            <span class="work-title">Hello Oral Care</span>
-            <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
-          </li>
-          <li>
-            <span class="work-title">Dove Demia</span>
-            <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
-          </li>
-        </ul>
+        <div class="work-group">
+          <p class="work-category">Branded Content</p>
+          <ul class="work-list">
+            <li>
+              <span class="work-title">Defender Bar</span>
+              <span class="work-detail">Director &mdash; 2026</span>
+            </li>
+            <li>
+              <span class="work-title">Fort Hamilton Gin</span>
+              <span class="work-detail">Director &mdash; 2025</span>
+            </li>
+            <li>
+              <span class="work-title">Hello Oral Care</span>
+              <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
+            </li>
+            <li>
+              <span class="work-title">Dove Demia</span>
+              <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
 
     </div>
