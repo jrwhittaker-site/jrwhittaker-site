@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan R. Whittaker — Director, Producer, Writer</title>
+  <meta name="description" content="Jonathan R. Whittaker — Director, Producer, Writer, Storyteller. Based in New York. Available worldwide.">
+
+  <style>
+
+    /* ── Reset ───────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #e0e0e0;
+      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* ── Navigation ──────────────────────────────────── */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #0f0f0f;
+      border-bottom: 0.5px solid #1e1e1e;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .nav-wordmark {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #e0e0e0;
+      text-decoration: none;
+      text-transform: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: #4a4a4a;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #e0e0e0;
+    }
+
+    /* ── Hero ────────────────────────────────────────── */
+
+    #hero {
+      margin-top: 44px;
+      height: calc(100vh - 44px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-right: none;
+    }
+
+    .hero-left {
+      overflow: hidden;
+      border-right: 0.5px solid #1e1e1e;
+    }
+
+    .hero-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .hero-right {
+      background: #0f0f0f;
+      padding: 60px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-top {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-tagline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: #50FA7B;
+      margin-bottom: 28px;
+    }
+
+    .hero-roles {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-roles span {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: #3a3a3a;
+      text-transform: uppercase;
+    }
+
+    .hero-bottom {
+      display: flex;
+      gap: 20px;
+    }
+
+    .hero-bottom a {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: #3a3a3a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .hero-bottom a:hover {
+      color: #e0e0e0;
+    }
+
+    /* ── Selected Work ───────────────────────────────── */
+
+    #director {
+      background: #f2f2f0;
+      border-top: 2px solid #50FA7B;
+      padding: 48px 40px;
+    }
+
+    .section-pill {
+      display: inline-block;
+      background: #0f0f0f;
+      padding: 4px 10px;
+      margin-bottom: 32px;
+    }
+
+    .section-pill span {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      color: #50FA7B;
+      text-transform: uppercase;
+    }
+
+    .work-groups {
+      max-width: 780px;
+    }
+
+    .work-group {
+      border-top: 1px solid #d8d8d4;
+      padding: 24px 0;
+    }
+
+    .work-group:last-child {
+      border-bottom: 1px solid #d8d8d4;
+    }
+
+    .work-category {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: #888888;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .work-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .work-title {
+      display: block;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #111111;
+      line-height: 1.4;
+    }
+
+    .work-detail {
+      display: block;
+      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #555555;
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    /* ── Mentor & Educator ───────────────────────────── */
+
+    #educator {
+      background: #0f0f0f;
+      padding: 64px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .educator-left {}
+
+    .section-label {
+      display: block;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      color: #50FA7B;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .educator-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.15;
+      color: #e0e0e0;
+      margin-bottom: 28px;
+    }
+
+    .educator-body {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .educator-body p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: #aaaaaa;
+    }
+
+    .educator-right {
+      overflow: hidden;
+    }
+
+    .educator-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 400px;
+      display: block;
+    }
+
+    /* ── About ───────────────────────────────────────── */
+
+    #about {
+      background: #141414;
+      padding: 64px 40px;
+      max-width: 680px;
+    }
+
+    .about-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.15;
+      color: #e0e0e0;
+      margin-bottom: 24px;
+    }
+
+    .about-body {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: #aaaaaa;
+      margin-bottom: 24px;
+    }
+
+    .about-quote {
+      font-size: 14px;
+      font-style: italic;
+      color: #50FA7B;
+      line-height: 1.6;
+    }
+
+    /* ── Contact ─────────────────────────────────────── */
+
+    #contact {
+      background: #0f0f0f;
+      border-top: 2px solid #50FA7B;
+      padding: 64px 40px;
+    }
+
+    .contact-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #e0e0e0;
+      margin-bottom: 16px;
+    }
+
+    .contact-body {
+      font-size: 16px;
+      font-weight: 400;
+      color: #4a4a4a;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .contact-cta {
+      display: inline-block;
+      background: #50FA7B;
+      color: #0f0f0f;
+      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 0;
+      transition: opacity 0.2s;
+      margin-bottom: 20px;
+    }
+
+    .contact-cta:hover {
+      opacity: 0.85;
+    }
+
+    .contact-email {
+      display: block;
+      font-size: 13px;
+      color: #3a3a3a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .contact-email:hover {
+      color: #e0e0e0;
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+
+    footer {
+      background: #080808;
+      border-top: 0.5px solid #1a1a1a;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 9px;
+      font-weight: 400;
+      color: #2a2a2a;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #2a2a2a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #e0e0e0;
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+
+    @media (max-width: 768px) {
+
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      /* Hero stacks portrait on top, text below */
+      #hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: calc(100vh - 44px);
+      }
+
+      .hero-left {
+        height: 55vw;
+        min-height: 260px;
+        border-right: none;
+        border-bottom: 0.5px solid #1e1e1e;
+      }
+
+      .hero-right {
+        padding: 36px 20px 32px;
+        gap: 32px;
+      }
+
+      .hero-tagline {
+        font-size: clamp(32px, 8vw, 48px);
+        margin-bottom: 20px;
+      }
+
+      /* Educator stacks */
+      #educator {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 48px 20px;
+      }
+
+      .educator-right img {
+        min-height: 260px;
+        max-height: 400px;
+      }
+
+      #director,
+      #about,
+      #contact {
+        padding: 48px 20px;
+      }
+
+      #about {
+        max-width: 100%;
+      }
+
+      footer {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ─────────────────────────────────────────── -->
+
+  <nav>
+    <a class="nav-wordmark" href="#hero">Jonathan R. Whittaker</a>
+    <ul class="nav-links">
+      <li><a href="#director">Director</a></li>
+      <li><a href="#educator">Educator</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────── -->
+
+  <section id="hero">
+
+    <div class="hero-left">
+      <img
+        src="images/portrait.jpeg"
+        alt="Jonathan R. Whittaker"
+      >
+    </div>
+
+    <div class="hero-right">
+
+      <div class="hero-top">
+        <p class="hero-tagline">Every<br>choice<br>in service<br>to the<br>story.</p>
+        <div class="hero-roles">
+          <span>Director</span>
+          <span>Producer</span>
+          <span>Writer</span>
+          <span>Storyteller</span>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener">IMDb</a>
+        <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ── Selected Work ────────────────────────────────── -->
+
+  <section id="director">
+
+    <div class="section-pill"><span>Selected Work</span></div>
+
+    <div class="work-groups">
+
+      <div class="work-group">
+        <p class="work-category">Documentary &amp; Broadcast</p>
+        <ul class="work-list">
+          <li>
+            <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
+            <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
+          </li>
+          <li>
+            <span class="work-title">The Pulse</span>
+            <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
+          </li>
+          <li>
+            <span class="work-title">Mater Iniciativa</span>
+            <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="work-group">
+        <p class="work-category">Commercial &amp; Broadcast</p>
+        <ul class="work-list">
+          <li>
+            <span class="work-title">Venus by Gillette</span>
+            <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
+          </li>
+          <li>
+            <span class="work-title">Hyundai Equus</span>
+            <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
+          </li>
+          <li>
+            <span class="work-title">Modelo Especial</span>
+            <span class="work-detail">Director &mdash; Featuring Clint Dempsey, 2011</span>
+          </li>
+          <li>
+            <span class="work-title">Nissan Juke</span>
+            <span class="work-detail">Director &mdash; 2011</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="work-group">
+        <p class="work-category">Narrative</p>
+        <ul class="work-list">
+          <li>
+            <span class="work-title">Train Baby</span>
+            <span class="work-detail">Producer &mdash; Amazon Prime</span>
+          </li>
+          <li>
+            <span class="work-title">America Here We Come</span>
+            <span class="work-detail">Producer &mdash; Netflix</span>
+          </li>
+          <li>
+            <span class="work-title">A Modo Suo</span>
+            <span class="work-detail">Director &mdash; Short Film, 2026</span>
+          </li>
+          <li>
+            <span class="work-title">Hidden Love</span>
+            <span class="work-detail">Director &mdash; Short Film, 2023</span>
+          </li>
+          <li>
+            <span class="work-title">Emilia</span>
+            <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="work-group">
+        <p class="work-category">Branded Content</p>
+        <ul class="work-list">
+          <li>
+            <span class="work-title">Defender Bar</span>
+            <span class="work-detail">Director &mdash; 2026</span>
+          </li>
+          <li>
+            <span class="work-title">Fort Hamilton Gin</span>
+            <span class="work-detail">Director &mdash; 2025</span>
+          </li>
+          <li>
+            <span class="work-title">Dove Demia</span>
+            <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ── Mentor & Educator ─────────────────────────────── -->
+
+  <section id="educator">
+
+    <div class="educator-left">
+      <span class="section-label">Mentor &amp; Educator</span>
+      <h2 class="educator-heading">The work of asking the right questions.</h2>
+      <div class="educator-body">
+        <p>For eighteen years I taught and chaired the film department at the New York Film Academy, building curriculum deployed across twenty countries. The methodology was always the same: lead with questions, not answers. Help the filmmaker find the story only they can tell.</p>
+        <p>That same approach applies whether I am working with a director on set, a producer in development, or a student preparing their portfolio for conservatory or college admissions.</p>
+        <p>If you are a student applying to a performing arts high school or a college film program, I work with you the same way I work with any filmmaker. We find your story. We make sure every choice is in service to it. Sessions are available virtually and in person in New York.</p>
+      </div>
+    </div>
+
+    <div class="educator-right">
+      <div style="overflow:hidden; width:100%; height:100%;">
+        <img
+          src="images/filmmaker-light.jpeg"
+          alt="Jonathan R. Whittaker on set"
+        >
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── About ─────────────────────────────────────────── -->
+
+  <section id="about">
+    <span class="section-label">About</span>
+    <h2 class="about-heading">Still asking questions.</h2>
+    <p class="about-body">I came to filmmaking the way most do: by watching too many films and asking too many questions. Twenty years later the questions have not stopped. I have directed for Sony Pictures, the BBC, Gillette, Hyundai, and Nissan. I have produced for Netflix and Amazon. I have taught and mentored filmmakers across five continents. And I am still making short films and writing screenplays in Brooklyn because the work keeps teaching me things I do not yet know. Based in New York. Available worldwide.</p>
+    <p class="about-quote">Even a small kiss of light is enough to ignite a spark.</p>
+  </section>
+
+  <!-- ── Contact ───────────────────────────────────────── -->
+
+  <section id="contact">
+    <span class="section-label">Contact</span>
+    <h2 class="contact-heading">Let's talk about the work.</h2>
+    <p class="contact-body">For production inquiries, mentorship, or student consultations.</p>
+    <a
+      class="contact-cta"
+      href="https://calendly.com/jrw-jrwhittaker/initial-consult"
+      target="_blank"
+      rel="noopener"
+    >Schedule a Conversation</a>
+    <a class="contact-email" href="mailto:jrw@jrwhittaker.co">jrw@jrwhittaker.co</a>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+
+  <footer>
+    <span class="footer-copy">&copy; 2026 Jonathan R. Whittaker</span>
+    <div class="footer-links">
+      <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener">IMDb</a>
+      <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>

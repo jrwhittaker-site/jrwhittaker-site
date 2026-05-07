@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Courier+Prime:ital@0;1&display=swap');
+
+:root {
+  --bg: #f0efed;
+  --text: #1a1918;
+  --muted: #8a8680;
+  --nav-h: 52px;
+  --pad: 36px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Nav ─────────────────────────────────────────── */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad);
+  background: var(--bg);
+  z-index: 100;
+}
+
+.wordmark {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+/* ─── Page wrapper ────────────────────────────────── */
+
+main {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+}
+
+/* ─── Index ───────────────────────────────────────── */
+
+.index-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - var(--nav-h));
+  padding: 0 var(--pad);
+}
+
+.index-hero h1 {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 700px;
+}
+
+.index-hero .role {
+  margin-top: 16px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── Work ────────────────────────────────────────── */
+
+.page-header {
+  padding: 64px var(--pad) 48px;
+}
+
+.page-header h2 {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.work-grid {
+  padding: 0 var(--pad) 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 40px;
+}
+
+.work-item {}
+
+.vimeo-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  background: #dedad6;
+  overflow: hidden;
+}
+
+.vimeo-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.work-meta {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.work-title {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.work-year {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.work-desc {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 460px;
+}
+
+/* ─── Writing ─────────────────────────────────────── */
+
+.writing-wrap {
+  padding: 0 var(--pad) 80px;
+  max-width: 680px;
+}
+
+.writing-intro {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 48px;
+  line-height: 1.7;
+}
+
+.writing-title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.script {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.script .scene-heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 32px;
+  display: block;
+}
+
+.script .action {
+  display: block;
+  margin-top: 12px;
+}
+
+.script .character {
+  display: block;
+  margin-top: 24px;
+  margin-left: 40%;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.script .parenthetical {
+  display: block;
+  margin-left: 32%;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.script .dialogue {
+  display: block;
+  margin-left: 25%;
+  margin-right: 15%;
+}
+
+/* ─── Photography ─────────────────────────────────── */
+
+.photo-grid {
+  padding: 0 var(--pad) 80px;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.photo-grid figure {
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+.photo-grid img {
+  width: 100%;
+  display: block;
+  filter: none;
+}
+
+.photo-caption {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ─── About ───────────────────────────────────────── */
+
+.about-wrap {
+  padding: 0 var(--pad) 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 80px;
+  max-width: 900px;
+}
+
+.bio-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.bio-text p + p {
+  margin-top: 20px;
+}
+
+.contact-col {
+  padding-top: 4px;
+}
+
+.contact-col h3 {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-list a {
+  font-size: 13px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+  padding-bottom: 1px;
+}
+
+.contact-list a:hover {
+  border-color: var(--text);
+}
+
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ─── Footer ──────────────────────────────────────── */
+
+footer {
+  padding: 0 var(--pad) 32px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+
+@media (max-width: 768px) {
+  :root {
+    --pad: 20px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .photo-grid {
+    columns: 1;
+  }
+
+  .about-wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
