@@ -15,9 +15,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: #0f0f0f;
@@ -29,22 +27,14 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-    }
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; }
 
     /* ── Navigation ──────────────────────────────────── */
 
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 200;
       background: #0f0f0f;
       border-bottom: 0.5px solid #1e1e1e;
@@ -61,7 +51,6 @@
       letter-spacing: 0.12em;
       color: #e0e0e0;
       text-decoration: none;
-      text-transform: none;
     }
 
     .nav-links {
@@ -80,9 +69,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: #e0e0e0;
-    }
+    .nav-links a:hover { color: #e0e0e0; }
 
     /* ── Hero ────────────────────────────────────────── */
 
@@ -91,7 +78,6 @@
       height: calc(100vh - 44px);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      border-right: none;
     }
 
     .hero-left {
@@ -159,9 +145,7 @@
       transition: color 0.2s;
     }
 
-    .hero-bottom a:hover {
-      color: #e0e0e0;
-    }
+    .hero-bottom a:hover { color: #e0e0e0; }
 
     /* ── Selected Work ───────────────────────────────── */
 
@@ -187,16 +171,14 @@
     }
 
     .work-groups {
-      max-width: 780px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 56px;
     }
 
     .work-group {
       border-top: 1px solid #d8d8d4;
       padding: 24px 0;
-    }
-
-    .work-group:last-child {
-      border-bottom: 1px solid #d8d8d4;
     }
 
     .work-category {
@@ -238,14 +220,30 @@
 
     #educator {
       background: #0f0f0f;
-      padding: 64px 40px;
+      padding: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
+      align-items: stretch;
+      min-height: 600px;
     }
 
-    .educator-left {}
+    .educator-image-col {
+      overflow: hidden;
+    }
+
+    .educator-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .educator-text-col {
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     .section-label {
       display: block;
@@ -280,24 +278,33 @@
       color: #aaaaaa;
     }
 
-    .educator-right {
-      overflow: hidden;
-    }
-
-    .educator-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 400px;
-      display: block;
-    }
-
     /* ── About ───────────────────────────────────────── */
 
     #about {
       background: #141414;
-      padding: 64px 40px;
-      max-width: 680px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      min-height: 540px;
+    }
+
+    .about-image-col {
+      overflow: hidden;
+    }
+
+    .about-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text-col {
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .about-heading {
@@ -367,9 +374,7 @@
       margin-bottom: 20px;
     }
 
-    .contact-cta:hover {
-      opacity: 0.85;
-    }
+    .contact-cta:hover { opacity: 0.85; }
 
     .contact-email {
       display: block;
@@ -380,9 +385,7 @@
       transition: color 0.2s;
     }
 
-    .contact-email:hover {
-      color: #e0e0e0;
-    }
+    .contact-email:hover { color: #e0e0e0; }
 
     /* ── Footer ──────────────────────────────────────── */
 
@@ -402,10 +405,7 @@
       letter-spacing: 0.04em;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
+    .footer-links { display: flex; gap: 20px; }
 
     .footer-links a {
       font-size: 13px;
@@ -418,23 +418,23 @@
       transition: color 0.2s;
     }
 
-    .footer-links a:hover {
-      color: #e0e0e0;
-    }
+    .footer-links a:hover { color: #e0e0e0; }
 
     /* ── Responsive ──────────────────────────────────── */
 
+    @media (max-width: 900px) {
+
+      .work-groups {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
 
-      nav {
-        padding: 0 20px;
-      }
+      nav { padding: 0 20px; }
 
-      .nav-links {
-        gap: 16px;
-      }
+      .nav-links { gap: 16px; }
 
-      /* Hero stacks portrait on top, text below */
       #hero {
         grid-template-columns: 1fr;
         height: auto;
@@ -454,30 +454,30 @@
       }
 
       .hero-tagline {
-        font-size: clamp(32px, 8vw, 48px);
+        font-size: clamp(40px, 10vw, 72px);
         margin-bottom: 20px;
       }
 
-      /* Educator stacks */
-      #educator {
+      #educator,
+      #about {
         grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 48px 20px;
+        min-height: auto;
       }
 
-      .educator-right img {
-        min-height: 260px;
-        max-height: 400px;
+      .educator-image-col,
+      .about-image-col {
+        height: 60vw;
+        min-height: 280px;
+      }
+
+      .educator-text-col,
+      .about-text-col {
+        padding: 48px 20px;
       }
 
       #director,
-      #about,
       #contact {
         padding: 48px 20px;
-      }
-
-      #about {
-        max-width: 100%;
       }
 
       footer {
@@ -489,13 +489,8 @@
     }
 
     @media (max-width: 480px) {
-      .nav-links {
-        gap: 12px;
-      }
-
-      .nav-links a {
-        font-size: 9px;
-      }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 9px; }
     }
 
   </style>
@@ -521,7 +516,7 @@
     <div class="hero-left">
       <img
         src="images/portrait.jpeg"
-        alt="Director and producer Jonathan R. Whittaker"
+        alt="Portrait of Jonathan R. Whittaker"
       >
     </div>
 
@@ -554,6 +549,7 @@
 
     <div class="work-groups">
 
+      <!-- Col 1 ── Documentary & Broadcast -->
       <div class="work-group">
         <p class="work-category">Documentary &amp; Broadcast</p>
         <ul class="work-list">
@@ -569,9 +565,14 @@
             <span class="work-title">Mater Iniciativa</span>
             <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
           </li>
+          <li>
+            <span class="work-title">The Phinal Show</span>
+            <span class="work-detail">Director &mdash; Documentary Short, Phish final concert, Coventry VT, 2004</span>
+          </li>
         </ul>
       </div>
 
+      <!-- Col 2 ── Commercial & Broadcast -->
       <div class="work-group">
         <p class="work-category">Commercial &amp; Broadcast</p>
         <ul class="work-list">
@@ -591,9 +592,18 @@
             <span class="work-title">Nissan Juke</span>
             <span class="work-detail">Director &mdash; 2011</span>
           </li>
+          <li>
+            <span class="work-title">NBA All-Star Promo</span>
+            <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
+          </li>
+          <li>
+            <span class="work-title">Anabel Mobile</span>
+            <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
+          </li>
         </ul>
       </div>
 
+      <!-- Col 1 ── Narrative -->
       <div class="work-group">
         <p class="work-category">Narrative</p>
         <ul class="work-list">
@@ -604,6 +614,18 @@
           <li>
             <span class="work-title">America Here We Come</span>
             <span class="work-detail">Producer &mdash; Netflix</span>
+          </li>
+          <li>
+            <span class="work-title">Down East</span>
+            <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
+          </li>
+          <li>
+            <span class="work-title">Kristy's Lament</span>
+            <span class="work-detail">Director &mdash; Short Musical featuring Broadway star Kristy Cates, 2019</span>
+          </li>
+          <li>
+            <span class="work-title">Inhale Exhale</span>
+            <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
           </li>
           <li>
             <span class="work-title">A Modo Suo</span>
@@ -617,9 +639,33 @@
             <span class="work-title">Emilia</span>
             <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
           </li>
+          <li>
+            <span class="work-title">Slumberland</span>
+            <span class="work-detail">Director &mdash; Short Film, 2008</span>
+          </li>
         </ul>
       </div>
 
+      <!-- Col 2 ── Music Video -->
+      <div class="work-group">
+        <p class="work-category">Music Video</p>
+        <ul class="work-list">
+          <li>
+            <span class="work-title">Luv U Baby</span>
+            <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
+          </li>
+          <li>
+            <span class="work-title">Unborn Child</span>
+            <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
+          </li>
+          <li>
+            <span class="work-title">BuzzSessions</span>
+            <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 1 ── Branded Content -->
       <div class="work-group">
         <p class="work-category">Branded Content</p>
         <ul class="work-list">
@@ -630,6 +676,10 @@
           <li>
             <span class="work-title">Fort Hamilton Gin</span>
             <span class="work-detail">Director &mdash; 2025</span>
+          </li>
+          <li>
+            <span class="work-title">Hello Oral Care</span>
+            <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
           </li>
           <li>
             <span class="work-title">Dove Demia</span>
@@ -646,7 +696,14 @@
 
   <section id="educator">
 
-    <div class="educator-left">
+    <div class="educator-image-col">
+      <img
+        src="images/directing-outdoor.jpeg"
+        alt="Jonathan R. Whittaker directing on location"
+      >
+    </div>
+
+    <div class="educator-text-col">
       <span class="section-label">Mentor &amp; Educator</span>
       <h2 class="educator-heading">The work of asking the right questions.</h2>
       <div class="educator-body">
@@ -656,24 +713,26 @@
       </div>
     </div>
 
-    <div class="educator-right">
-      <div style="overflow:hidden; width:100%; height:100%;">
-        <img
-          src="images/filmmaker-light.jpeg"
-          alt="On set"
-        >
-      </div>
-    </div>
-
   </section>
 
   <!-- ── About ─────────────────────────────────────────── -->
 
   <section id="about">
-    <span class="section-label">About</span>
-    <h2 class="about-heading">Still asking questions.</h2>
-    <p class="about-body">I came to filmmaking the way most do: by watching too many films and asking too many questions. Twenty years later the questions have not stopped. I have directed for Sony Pictures, the BBC, Gillette, Hyundai, and Nissan. I have produced for Netflix and Amazon. I have taught and mentored filmmakers across five continents. And I am still making short films and writing screenplays in Brooklyn because the work keeps teaching me things I do not yet know. Based in New York. Available worldwide.</p>
-    <p class="about-quote">Even a small kiss of light is enough to ignite a spark.</p>
+
+    <div class="about-image-col">
+      <img
+        src="images/filmmaker-light.jpeg"
+        alt="Jonathan R. Whittaker on set"
+      >
+    </div>
+
+    <div class="about-text-col">
+      <span class="section-label">About</span>
+      <h2 class="about-heading">Still asking questions.</h2>
+      <p class="about-body">I came to filmmaking the way most do: by watching too many films and asking too many questions. Twenty years later the questions have not stopped. I have directed for Sony Pictures, the BBC, Gillette, Hyundai, and Nissan. I have produced for Netflix and Amazon. I have taught and mentored filmmakers across five continents. And I am still making short films and writing screenplays in Brooklyn because the work keeps teaching me things I do not yet know. Based in New York. Available worldwide.</p>
+      <p class="about-quote">Even a small kiss of light is enough to ignite a spark.</p>
+    </div>
+
   </section>
 
   <!-- ── Contact ───────────────────────────────────────── -->
