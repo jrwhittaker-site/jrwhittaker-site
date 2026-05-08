@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jonathan R. Whittaker — Director, Producer, Writer</title>
-  <meta name="description" content="Jonathan R. Whittaker — Director, Producer, Writer, Storyteller. Based in New York. Available worldwide.">
+
+  <!-- SEO -->
+  <title>Jonathan R. Whittaker | Director, Producer, Writer, New York</title>
+  <meta name="description" content="Jonathan R. Whittaker is a New York based director, producer, and writer with credits at Sony Pictures, BBC, Netflix, and Amazon. Available for production, mentorship, and student consultations.">
+  <link rel="canonical" href="https://jrwhittaker.co">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jonathan R. Whittaker">
+  <meta property="og:description" content="Jonathan R. Whittaker is a New York based director, producer, and writer with credits at Sony Pictures, BBC, Netflix, and Amazon. Available for production, mentorship, and student consultations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jrwhittaker.co">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jonathan R. Whittaker">
+  <meta name="twitter:description" content="Jonathan R. Whittaker is a New York based director, producer, and writer with credits at Sony Pictures, BBC, Netflix, and Amazon. Available for production, mentorship, and student consultations.">
 
   <style>
 
@@ -30,6 +44,46 @@
     img { display: block; max-width: 100%; }
     a   { color: inherit; }
 
+    /* ── Skip link ───────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      z-index: 9999;
+      background: #50FA7B;
+      color: #0f0f0f;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 10px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: top 0.15s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* ── Focus styles ────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid #50FA7B;
+      outline-offset: 3px;
+    }
+
+    /* ── Section labels ──────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: #50FA7B;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #50FA7B;
+      padding-bottom: 6px;
+    }
+
     /* ── Navigation ──────────────────────────────────── */
 
     nav {
@@ -37,7 +91,7 @@
       top: 0; left: 0; right: 0;
       z-index: 200;
       background: #0f0f0f;
-      border-bottom: 0.5px solid #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
       height: 44px;
       display: flex;
       align-items: center;
@@ -82,7 +136,7 @@
 
     .hero-left {
       overflow: hidden;
-      border-right: 0.5px solid #1e1e1e;
+      border-right: 1px solid #1e1e1e;
     }
 
     .hero-left img {
@@ -150,24 +204,14 @@
     /* ── Selected Work ───────────────────────────────── */
 
     #director {
-      background: #f2f2f0;
+      background: #EFEFEA;
       border-top: 2px solid #50FA7B;
       padding: 48px 40px;
     }
 
-    .section-pill {
-      display: inline-block;
-      background: #0f0f0f;
-      padding: 4px 10px;
-      margin-bottom: 32px;
-    }
-
-    .section-pill span {
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 0.3em;
+    #director .section-label {
       color: #50FA7B;
-      text-transform: uppercase;
+      border-color: #50FA7B;
     }
 
     .work-groups {
@@ -226,6 +270,7 @@
 
     #educator {
       background: #0f0f0f;
+      border-top: 1px solid #1e1e1e;
       padding: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -233,32 +278,12 @@
       min-height: 600px;
     }
 
-    .educator-image-col {
-      overflow: hidden;
-    }
-
-    .educator-image-col img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
     .educator-text-col {
       padding: 64px 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-
-    .section-label {
-      display: block;
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 0.3em;
-      color: #50FA7B;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      border-right: 1px solid #1e1e1e;
     }
 
     .educator-heading {
@@ -284,10 +309,53 @@
       color: #aaaaaa;
     }
 
+    .educator-image-col {
+      overflow: hidden;
+    }
+
+    .educator-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Guest lectures subsection */
+    .guest-lectures {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .guest-lectures-label {
+      display: block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: #50FA7B;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .guest-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    .guest-list li {
+      font-size: 14px;
+      font-weight: 400;
+      color: #888888;
+      line-height: 1.5;
+    }
+
     /* ── About ───────────────────────────────────────── */
 
     #about {
-      background: #141414;
+      background: #0f0f0f;
+      border-top: 1px solid #1e1e1e;
       padding: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -297,6 +365,7 @@
 
     .about-image-col {
       overflow: hidden;
+      border-right: 1px solid #1e1e1e;
     }
 
     .about-image-col img {
@@ -397,7 +466,7 @@
 
     footer {
       background: #080808;
-      border-top: 0.5px solid #1a1a1a;
+      border-top: 1px solid #1a1a1a;
       padding: 16px 40px;
       display: flex;
       align-items: center;
@@ -429,7 +498,6 @@
     /* ── Responsive ──────────────────────────────────── */
 
     @media (max-width: 900px) {
-
       .work-groups {
         grid-template-columns: 1fr;
       }
@@ -442,7 +510,6 @@
     @media (max-width: 768px) {
 
       nav { padding: 0 20px; }
-
       .nav-links { gap: 16px; }
 
       #hero {
@@ -455,7 +522,7 @@
         height: 55vw;
         min-height: 260px;
         border-right: none;
-        border-bottom: 0.5px solid #1e1e1e;
+        border-bottom: 1px solid #1e1e1e;
       }
 
       .hero-right {
@@ -474,15 +541,30 @@
         min-height: auto;
       }
 
+      .educator-text-col {
+        padding: 48px 20px;
+        border-right: none;
+        border-bottom: 1px solid #1e1e1e;
+        order: -1;
+      }
+
       .educator-image-col,
       .about-image-col {
         height: 60vw;
         min-height: 280px;
       }
 
-      .educator-text-col,
+      .about-image-col {
+        border-right: none;
+        border-bottom: 1px solid #1e1e1e;
+      }
+
       .about-text-col {
         padding: 48px 20px;
+      }
+
+      .guest-list {
+        grid-template-columns: 1fr;
       }
 
       #director,
@@ -507,10 +589,13 @@
 </head>
 <body>
 
+  <!-- Skip navigation -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- ── Nav ─────────────────────────────────────────── -->
 
-  <nav>
-    <a class="nav-wordmark" href="#hero">Jonathan R. Whittaker</a>
+  <nav role="navigation" aria-label="Main navigation">
+    <a class="nav-wordmark" href="#hero" aria-label="Jonathan R. Whittaker — home">Jonathan R. Whittaker</a>
     <ul class="nav-links">
       <li><a href="#director">Director</a></li>
       <li><a href="#educator">Educator</a></li>
@@ -519,259 +604,300 @@
     </ul>
   </nav>
 
-  <!-- ── Hero ────────────────────────────────────────── -->
+  <!-- ── Main content ──────────────────────────────────── -->
 
-  <section id="hero">
+  <main id="main-content">
 
-    <div class="hero-left">
-      <img
-        src="images/portrait.jpeg"
-        alt="Portrait of Jonathan R. Whittaker"
-      >
-    </div>
+    <!-- ── Hero ──────────────────────────────────────── -->
 
-    <div class="hero-right">
+    <section id="hero" aria-label="Introduction">
 
-      <div class="hero-top">
-        <p class="hero-tagline">Every<br>choice<br>in service<br>to the<br>story.</p>
-        <div class="hero-roles">
-          <span>Director</span>
-          <span>Producer</span>
-          <span>Writer</span>
-          <span>Storyteller</span>
-        </div>
+      <div class="hero-left">
+        <img
+          src="images/portrait.jpeg"
+          alt="Jonathan R. Whittaker, director and educator, New York."
+        >
       </div>
 
-      <div class="hero-bottom">
-        <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener">IMDb</a>
-        <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      <div class="hero-right">
 
-    </div>
-
-  </section>
-
-  <!-- ── Selected Work ────────────────────────────────── -->
-
-  <section id="director">
-
-    <div class="section-pill"><span>Selected Work</span></div>
-
-    <div class="work-groups">
-
-      <!-- Left column: Documentary & Broadcast, Commercial & Broadcast -->
-      <div class="work-col">
-
-        <div class="work-group">
-          <p class="work-category">Documentary &amp; Broadcast</p>
-          <ul class="work-list">
-            <li>
-              <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
-              <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
-            </li>
-            <li>
-              <span class="work-title">The Pulse</span>
-              <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
-            </li>
-            <li>
-              <span class="work-title">Mater Iniciativa</span>
-              <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
-            </li>
-            <li>
-              <span class="work-title">The Phinal Show</span>
-              <span class="work-detail">Director &mdash; Documentary Short, Phish final concert, Coventry VT, 2004</span>
-            </li>
-          </ul>
+        <div class="hero-top">
+          <p class="hero-tagline">Every<br>choice<br>in service<br>to the<br>story.</p>
+          <div class="hero-roles" aria-label="Roles">
+            <span>Director</span>
+            <span>Producer</span>
+            <span>Writer</span>
+            <span>Storyteller</span>
+          </div>
         </div>
 
-        <div class="work-group">
-          <p class="work-category">Commercial &amp; Broadcast</p>
-          <ul class="work-list">
-            <li>
-              <span class="work-title">Venus by Gillette</span>
-              <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
-            </li>
-            <li>
-              <span class="work-title">Hyundai Equus</span>
-              <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
-            </li>
-            <li>
-              <span class="work-title">Modelo Especial</span>
-              <span class="work-detail">Director &mdash; Featuring Clint Dempsey, 2011</span>
-            </li>
-            <li>
-              <span class="work-title">Nissan Juke</span>
-              <span class="work-detail">Director &mdash; 2011</span>
-            </li>
-            <li>
-              <span class="work-title">NBA All-Star Promo</span>
-              <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
-            </li>
-            <li>
-              <span class="work-title">Anabel Mobile</span>
-              <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
-            </li>
-          </ul>
+        <div class="hero-bottom">
+          <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on IMDb (opens in new tab)">IMDb</a>
+          <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on LinkedIn (opens in new tab)">LinkedIn</a>
         </div>
 
       </div>
 
-      <!-- Right column: Narrative, Music Video, Branded Content -->
-      <div class="work-col">
+    </section>
 
-        <div class="work-group">
-          <p class="work-category">Narrative</p>
-          <ul class="work-list">
-            <li>
-              <span class="work-title">Train Baby</span>
-              <span class="work-detail">Producer &mdash; Amazon Prime</span>
-            </li>
-            <li>
-              <span class="work-title">America Here We Come</span>
-              <span class="work-detail">Producer &mdash; Netflix</span>
-            </li>
-            <li>
-              <span class="work-title">Down East</span>
-              <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
-            </li>
-            <li>
-              <span class="work-title">Kristy's Lament</span>
-              <span class="work-detail">Director &mdash; Short Musical featuring Broadway star Kristy Cates, 2019</span>
-            </li>
-            <li>
-              <span class="work-title">Inhale Exhale</span>
-              <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
-            </li>
-            <li>
-              <span class="work-title">A Modo Suo</span>
-              <span class="work-detail">Director &mdash; Short Film, 2026</span>
-            </li>
-            <li>
-              <span class="work-title">Hidden Love</span>
-              <span class="work-detail">Director &mdash; Short Film, 2023</span>
-            </li>
-            <li>
-              <span class="work-title">Emilia</span>
-              <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
-            </li>
-            <li>
-              <span class="work-title">Slumberland</span>
-              <span class="work-detail">Director &mdash; Short Film, 2008</span>
-            </li>
-          </ul>
+    <!-- ── Selected Work ───────────────────────────────── -->
+
+    <section id="director" aria-labelledby="work-heading">
+
+      <span class="section-label" id="work-heading">Selected Work</span>
+
+      <div class="work-groups">
+
+        <!-- Left column: Documentary & Broadcast, Commercial & Broadcast, Advisory -->
+        <div class="work-col">
+
+          <div class="work-group">
+            <p class="work-category">Documentary &amp; Broadcast</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
+                <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
+              </li>
+              <li>
+                <span class="work-title">The Pulse</span>
+                <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
+              </li>
+              <li>
+                <span class="work-title">Mater Iniciativa</span>
+                <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Commercial &amp; Broadcast</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Venus by Gillette</span>
+                <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
+              </li>
+              <li>
+                <span class="work-title">Hyundai Equus</span>
+                <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
+              </li>
+              <li>
+                <span class="work-title">Modelo Especial</span>
+                <span class="work-detail">Director &mdash; Featuring Clint Dempsey, 2011</span>
+              </li>
+              <li>
+                <span class="work-title">Nissan Juke</span>
+                <span class="work-detail">Director &mdash; 2011</span>
+              </li>
+              <li>
+                <span class="work-title">NBA All-Star Promo</span>
+                <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
+              </li>
+              <li>
+                <span class="work-title">Anabel Mobile</span>
+                <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Advisory &amp; Story Development</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Special Order</span>
+                <span class="work-detail">Story Producer &mdash; Los Angeles, 2021 to present</span>
+              </li>
+              <li>
+                <span class="work-title">Kr8tiv</span>
+                <span class="work-detail">Creative Producer &mdash; Toronto, 2022 to present</span>
+              </li>
+              <li>
+                <span class="work-title">ABS-CBN &nbsp;|&nbsp; Cinematografo</span>
+                <span class="work-detail">Creative Advisor &mdash; Manila, 2019 to 2021</span>
+              </li>
+              <li>
+                <span class="work-title">Itaú Foundation</span>
+                <span class="work-detail">Visual Storytelling Workshop Director &mdash; São Paulo, 2019 &amp; 2025</span>
+              </li>
+              <li>
+                <span class="work-title">Globo</span>
+                <span class="work-detail">Production Training Lead &mdash; Rio de Janeiro, 2019</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        <div class="work-group">
-          <p class="work-category">Music Video</p>
-          <ul class="work-list">
-            <li>
-              <span class="work-title">Luv U Baby</span>
-              <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
-            </li>
-            <li>
-              <span class="work-title">Unborn Child</span>
-              <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
-            </li>
-            <li>
-              <span class="work-title">BuzzSessions</span>
-              <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
-            </li>
-          </ul>
-        </div>
+        <!-- Right column: Narrative, Music Video, Branded Content -->
+        <div class="work-col">
 
-        <div class="work-group">
-          <p class="work-category">Branded Content</p>
-          <ul class="work-list">
-            <li>
-              <span class="work-title">Defender Bar</span>
-              <span class="work-detail">Director &mdash; 2026</span>
-            </li>
-            <li>
-              <span class="work-title">Fort Hamilton Gin</span>
-              <span class="work-detail">Director &mdash; 2025</span>
-            </li>
-            <li>
-              <span class="work-title">Hello Oral Care</span>
-              <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
-            </li>
-            <li>
-              <span class="work-title">Dove Demia</span>
-              <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
-            </li>
-          </ul>
+          <div class="work-group">
+            <p class="work-category">Narrative</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Train Baby</span>
+                <span class="work-detail">Producer &mdash; Amazon Prime</span>
+              </li>
+              <li>
+                <span class="work-title">America Here We Come</span>
+                <span class="work-detail">Producer &mdash; Netflix</span>
+              </li>
+              <li>
+                <span class="work-title">Down East</span>
+                <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
+              </li>
+              <li>
+                <span class="work-title">Inhale Exhale</span>
+                <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
+              </li>
+              <li>
+                <span class="work-title">A Modo Suo</span>
+                <span class="work-detail">Producer &mdash; Short Film, 2026</span>
+              </li>
+              <li>
+                <span class="work-title">Hidden Love</span>
+                <span class="work-detail">Director &mdash; Short Film, 2023</span>
+              </li>
+              <li>
+                <span class="work-title">Emilia</span>
+                <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Music Video</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Luv U Baby</span>
+                <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
+              </li>
+              <li>
+                <span class="work-title">Unborn Child</span>
+                <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
+              </li>
+              <li>
+                <span class="work-title">BuzzSessions</span>
+                <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Branded Content</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Defender Bar</span>
+                <span class="work-detail">Director &mdash; 2026</span>
+              </li>
+              <li>
+                <span class="work-title">Fort Hamilton Gin</span>
+                <span class="work-detail">Director &mdash; 2025</span>
+              </li>
+              <li>
+                <span class="work-title">Hello Oral Care</span>
+                <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
+              </li>
+              <li>
+                <span class="work-title">Dove Demia</span>
+                <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+    <!-- ── Mentor & Educator ────────────────────────────── -->
 
-  <!-- ── Mentor & Educator ─────────────────────────────── -->
+    <section id="educator" aria-labelledby="educator-heading">
 
-  <section id="educator">
+      <div class="educator-text-col">
+        <span class="section-label">Mentor &amp; Educator</span>
+        <h2 class="educator-heading" id="educator-heading">The work of asking the right questions.</h2>
+        <div class="educator-body">
+          <p>For eighteen years I taught and chaired the film department at the New York Film Academy, building curriculum deployed across twenty countries. The methodology was always the same: lead with questions, not answers. Help the filmmaker find the story only they can tell.</p>
+          <p>That same approach applies whether I am working with a director on set, a producer in development, or a student preparing their portfolio for conservatory or college admissions.</p>
+          <p>If you are a student applying to a performing arts high school or a college film program, I work with you the same way I work with any filmmaker. We find your story. We make sure every choice is in service to it. Sessions are available virtually and in person in New York.</p>
+        </div>
 
-    <div class="educator-text-col">
-      <span class="section-label">Mentor &amp; Educator</span>
-      <h2 class="educator-heading">The work of asking the right questions.</h2>
-      <div class="educator-body">
-        <p>For eighteen years I taught and chaired the film department at the New York Film Academy, building curriculum deployed across twenty countries. The methodology was always the same: lead with questions, not answers. Help the filmmaker find the story only they can tell.</p>
-        <p>That same approach applies whether I am working with a director on set, a producer in development, or a student preparing their portfolio for conservatory or college admissions.</p>
-        <p>If you are a student applying to a performing arts high school or a college film program, I work with you the same way I work with any filmmaker. We find your story. We make sure every choice is in service to it. Sessions are available virtually and in person in New York.</p>
+        <div class="guest-lectures">
+          <span class="guest-lectures-label">Guest Lectures &amp; Masterclasses</span>
+          <ul class="guest-list" aria-label="Institutions where Jonathan R. Whittaker has given guest lectures and masterclasses">
+            <li>Beijing Film Academy</li>
+            <li>Shanghai Theatre Academy</li>
+            <li>King Saud University</li>
+            <li>Dar Al-Hekma University</li>
+            <li>Tecnologico de Monterrey, four campuses</li>
+            <li>UNIVA Guadalajara</li>
+            <li>US Embassy Programs, Nigeria, Kenya, Ghana, South Africa</li>
+            <li>Saudi Film Festival</li>
+            <li>MultiChoice Talent Factory, Africa</li>
+            <li>All American High School Film Festival</li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div class="educator-image-col">
-      <img
-        src="images/directing-outdoor.jpeg"
-        alt="Jonathan R. Whittaker directing on location"
-      >
-    </div>
+      <div class="educator-image-col">
+        <img
+          src="images/directing-outdoor.jpeg"
+          alt="Jonathan R. Whittaker directing on location with students."
+        >
+      </div>
 
-  </section>
+    </section>
 
-  <!-- ── About ─────────────────────────────────────────── -->
+    <!-- ── About ──────────────────────────────────────── -->
 
-  <section id="about">
+    <section id="about" aria-labelledby="about-heading">
 
-    <div class="about-image-col">
-      <img
-        src="images/filmmaker-light.jpeg"
-        alt="Jonathan R. Whittaker on set"
-      >
-    </div>
+      <div class="about-image-col">
+        <img
+          src="images/filmmaker-light.jpeg"
+          alt="A film light bulb, photograph by Jonathan R. Whittaker."
+        >
+      </div>
 
-    <div class="about-text-col">
-      <span class="section-label">About</span>
-      <h2 class="about-heading">Still asking questions.</h2>
-      <p class="about-body">I came to filmmaking the way most do: by watching too many films and asking too many questions. Twenty years later the questions have not stopped. I have directed for Sony Pictures, the BBC, Gillette, Hyundai, and Nissan. I have produced for Netflix and Amazon. I have taught and mentored filmmakers across five continents. And I am still making short films and writing screenplays in Brooklyn because the work keeps teaching me things I do not yet know. Based in New York. Available worldwide.</p>
-      <p class="about-quote">Even a small kiss of light is enough to ignite a spark.</p>
-    </div>
+      <div class="about-text-col">
+        <span class="section-label">About</span>
+        <h2 class="about-heading" id="about-heading">Still asking questions.</h2>
+        <p class="about-body">I came to filmmaking the way most do: by watching too many films and asking too many questions. Twenty years later the questions have not stopped. I have directed for Sony Pictures, the BBC, Gillette, Hyundai, and Nissan. I have produced for Netflix and Amazon. I have taught and mentored filmmakers across five continents. And I am still making short films and writing screenplays in Brooklyn because the work keeps teaching me things I do not yet know. Based in New York. Available worldwide.</p>
+        <p class="about-quote">Even a small kiss of light is enough to ignite a spark.</p>
+      </div>
 
-  </section>
+    </section>
 
-  <!-- ── Contact ───────────────────────────────────────── -->
+    <!-- ── Contact ────────────────────────────────────── -->
 
-  <section id="contact">
-    <span class="section-label">Contact</span>
-    <h2 class="contact-heading">Let's talk about the work.</h2>
-    <p class="contact-body">For production inquiries, mentorship, or student consultations.</p>
-    <a
-      class="contact-cta"
-      href="https://calendly.com/jrw-jrwhittaker/initial-consult"
-      target="_blank"
-      rel="noopener"
-    >Schedule a Conversation</a>
-    <a class="contact-email" href="mailto:jrw@jrwhittaker.co">jrw@jrwhittaker.co</a>
-  </section>
+    <section id="contact" aria-labelledby="contact-heading">
+      <span class="section-label">Contact</span>
+      <h2 class="contact-heading" id="contact-heading">Let's talk about the work.</h2>
+      <p class="contact-body">For production inquiries, mentorship, or student consultations.</p>
+      <a
+        class="contact-cta"
+        href="https://calendly.com/jrw-jrwhittaker/initial-consult"
+        target="_blank"
+        rel="noopener"
+        aria-label="Schedule a conversation with Jonathan R. Whittaker (opens Calendly in new tab)"
+      >Schedule a Conversation</a>
+      <a
+        class="contact-email"
+        href="mailto:jrw@jrwhittaker.co"
+        aria-label="Email Jonathan R. Whittaker at jrw@jrwhittaker.co"
+      >jrw@jrwhittaker.co</a>
+    </section>
+
+  </main>
 
   <!-- ── Footer ───────────────────────────────────────── -->
 
-  <footer>
+  <footer role="contentinfo" aria-label="Site footer">
     <span class="footer-copy">&copy; 2026 Jonathan R. Whittaker</span>
     <div class="footer-links">
-      <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener">IMDb</a>
-      <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on IMDb (opens in new tab)">IMDb</a>
+      <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on LinkedIn (opens in new tab)">LinkedIn</a>
     </div>
   </footer>
 
