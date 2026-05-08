@@ -135,15 +135,32 @@
     }
 
     .hero-left {
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       border-right: 1px solid #1e1e1e;
     }
 
-    .hero-left img {
+    .hero-portrait-wrap {
+      flex: 1;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .hero-portrait-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 20%;
+    }
+
+    .hero-caption {
+      padding: 12px 20px;
+      font-size: 11px;
+      font-style: italic;
+      color: #888888;
+      background: #0f0f0f;
+      border-top: 1px solid #1e1e1e;
+      line-height: 1.5;
     }
 
     .hero-right {
@@ -165,7 +182,7 @@
       font-weight: 700;
       line-height: 0.92;
       letter-spacing: -0.03em;
-      color: #111111;
+      color: #50FA7B;
       margin-bottom: 28px;
     }
 
@@ -205,7 +222,7 @@
 
     #director {
       background: #EFEFEA;
-      border-top: 2px solid #50FA7B;
+      border-top: 2px solid #111111;
       padding: 48px 40px;
     }
 
@@ -265,7 +282,7 @@
 
     #educator {
       background: #EFEFEA;
-      border-top: 2px solid #50FA7B;
+      border-top: 2px solid #111111;
       padding: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -350,7 +367,7 @@
 
     #about {
       background: #EFEFEA;
-      border-top: 2px solid #50FA7B;
+      border-top: 2px solid #111111;
       padding: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -406,7 +423,7 @@
 
     #contact {
       background: #EFEFEA;
-      border-top: 2px solid #50FA7B;
+      border-top: 2px solid #111111;
       padding: 64px 40px;
     }
 
@@ -514,10 +531,13 @@
       }
 
       .hero-left {
-        height: 55vw;
-        min-height: 260px;
         border-right: none;
         border-bottom: 1px solid #1e1e1e;
+      }
+
+      .hero-portrait-wrap {
+        height: 55vw;
+        min-height: 260px;
       }
 
       .hero-right {
@@ -608,10 +628,13 @@
     <section id="hero" aria-label="Introduction">
 
       <div class="hero-left">
-        <img
-          src="images/portrait.jpeg"
-          alt="Jonathan R. Whittaker, director and educator, New York."
-        >
+        <div class="hero-portrait-wrap">
+          <img
+            src="images/portrait.jpeg"
+            alt="Jonathan R. Whittaker, director and educator, New York."
+          >
+        </div>
+        <p class="hero-caption">Even a small kiss of light is enough to ignite a spark.</p>
       </div>
 
       <div class="hero-right">
@@ -859,7 +882,6 @@
         <span class="section-label">About</span>
         <h2 class="about-heading" id="about-heading">Still asking questions.</h2>
         <p class="about-body">I came to filmmaking the way most do: by watching too many films and asking too many questions. Twenty years later the questions have not stopped. I have directed for Sony Pictures, the BBC, Gillette, Hyundai, and Nissan. I have produced for Netflix and Amazon. I have taught and mentored filmmakers across five continents. And I am still making short films and writing screenplays in Brooklyn because the work keeps teaching me things I do not yet know. Based in New York. Available worldwide.</p>
-        <p class="about-quote">Even a small kiss of light is enough to ignite a spark.</p>
       </div>
 
     </section>
