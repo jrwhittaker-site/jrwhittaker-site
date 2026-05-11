@@ -130,11 +130,14 @@
     #hero {
       margin-top: 44px;
       height: calc(100vh - 44px);
+      overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      align-items: stretch;
     }
 
     .hero-left {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       border-right: 1px solid #1e1e1e;
@@ -222,8 +225,11 @@
     /* ── Selected Work ───────────────────────────────── */
 
     #director {
+      position: relative;
+      clear: both;
       background: #EFEFEA;
       border-top: 1px solid #111111;
+      margin-top: 0;
       padding: 80px 40px 48px;
     }
 
