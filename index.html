@@ -129,7 +129,7 @@
 
     #hero {
       margin-top: 44px;
-      height: calc(100vh - 44px);
+      min-height: 100vh;
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -225,6 +225,8 @@
     /* ── Selected Work ───────────────────────────────── */
 
     #director {
+      display: block;
+      width: 100%;
       position: relative;
       clear: both;
       background: #EFEFEA;
