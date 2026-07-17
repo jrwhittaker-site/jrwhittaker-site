@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Education & Consulting | Jonathan R. Whittaker</title>
+  <meta name="description" content="One-on-one mentorship and application consulting for filmmakers, high school applicants to performing arts programs, and college film program applicants. Sessions available virtually and in person in New York.">
+  <link rel="canonical" href="https://consulting.jrwhittaker.co">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Education & Consulting | Jonathan R. Whittaker">
+  <meta property="og:description" content="One-on-one mentorship and application consulting for filmmakers, high school applicants to performing arts programs, and college film program applicants.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://consulting.jrwhittaker.co">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Education & Consulting | Jonathan R. Whittaker">
+  <meta name="twitter:description" content="One-on-one mentorship and application consulting for filmmakers, high school applicants to performing arts programs, and college film program applicants.">
+
+  <style>
+
+    /* ── Reset ───────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #0f0f0f;
+      color: #e0e0e0;
+      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; }
+
+    /* ── Skip link ───────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      z-index: 9999;
+      background: #50FA7B;
+      color: #0f0f0f;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 10px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: top 0.15s;
+    }
+
+    .skip-link:focus { top: 0; }
+
+    /* ── Focus styles ────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid #50FA7B;
+      outline-offset: 3px;
+    }
+
+    /* ── Section labels ──────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: #50FA7B;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #50FA7B;
+      padding-bottom: 6px;
+    }
+
+    /* ── Navigation ──────────────────────────────────── */
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #0f0f0f;
+      border-bottom: 1px solid #1e1e1e;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .nav-wordmark {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #e0e0e0;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: #4a4a4a;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #e0e0e0; }
+
+    .nav-ext-arrow {
+      display: inline-block;
+      margin-left: 3px;
+      font-size: 10px;
+      opacity: 0.55;
+    }
+
+    /* ── Intro ───────────────────────────────────────── */
+
+    #intro {
+      margin-top: 44px;
+      padding: 96px 40px 64px;
+      max-width: 760px;
+    }
+
+    .intro-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: #50FA7B;
+      margin-bottom: 24px;
+    }
+
+    .intro-dek {
+      font-size: 20px;
+      font-weight: 400;
+      color: #b0b0b0;
+      line-height: 1.6;
+    }
+
+    /* ── Methodology ─────────────────────────────────── */
+
+    #methodology {
+      background: #EFEFEA;
+      border-top: 1px solid #111111;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 64px;
+      align-items: start;
+    }
+
+    .methodology-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 36px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.2;
+      color: #111111;
+      margin-bottom: 24px;
+    }
+
+    .methodology-body p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: #333333;
+      margin-bottom: 18px;
+    }
+
+    .methodology-body p:last-child { margin-bottom: 0; }
+
+    .methodology-image {
+      overflow: hidden;
+    }
+
+    .methodology-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── Guest Lectures ──────────────────────────────── */
+
+    #lectures {
+      background: #EFEFEA;
+      border-top: 1px solid #111111;
+      padding: 64px 40px 80px;
+    }
+
+    .guest-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px 24px;
+      max-width: 900px;
+    }
+
+    .guest-list li {
+      font-size: 14px;
+      font-weight: 400;
+      color: #888888;
+      line-height: 1.5;
+    }
+
+    /* ── Apply / Intake ──────────────────────────────── */
+
+    #apply {
+      background: #EFEFEA;
+      border-top: 1px solid #111111;
+      padding: 80px 40px;
+    }
+
+    .apply-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #111111;
+      margin-bottom: 12px;
+    }
+
+    .apply-dek {
+      font-size: 17px;
+      color: #555555;
+      margin-bottom: 40px;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    form.intake-form {
+      max-width: 560px;
+    }
+
+    .hidden-field {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .applicant-type-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .applicant-type-option {
+      flex: 1;
+    }
+
+    .applicant-type-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .applicant-type-option label {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555555;
+      background: #ffffff;
+      border: 1px solid #d8d8d4;
+      padding: 16px 12px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .applicant-type-option input:checked + label {
+      background: #111111;
+      border-color: #111111;
+      color: #50FA7B;
+    }
+
+    .applicant-type-option input:focus-visible + label {
+      outline: 2px solid #50FA7B;
+      outline-offset: 2px;
+    }
+
+    .form-row {
+      margin-bottom: 20px;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 8px;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #d8d8d4;
+      color: #111111;
+      font-family: inherit;
+      font-size: 16px;
+      padding: 12px 14px;
+    }
+
+    .form-row textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: 2px solid #50FA7B;
+      outline-offset: 1px;
+      border-color: #50FA7B;
+    }
+
+    .conditional-fields {
+      display: none;
+    }
+
+    .conditional-fields.is-visible {
+      display: block;
+    }
+
+    .intake-submit {
+      display: inline-block;
+      background: #50FA7B;
+      color: #0f0f0f;
+      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0;
+      padding: 14px 28px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: 8px;
+    }
+
+    .intake-submit:hover { opacity: 0.85; }
+
+    .apply-alt {
+      margin-top: 32px;
+      font-size: 14px;
+      color: #555555;
+    }
+
+    .apply-alt a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .apply-alt a:hover { color: #111111; }
+
+    /* ── Footer ──────────────────────────────────────── */
+
+    footer {
+      background: #080808;
+      border-top: 1px solid #1a1a1a;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      font-weight: 400;
+      color: #2a2a2a;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #2a2a2a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: #e0e0e0; }
+
+    /* ── Responsive ──────────────────────────────────── */
+
+    @media (max-width: 768px) {
+
+      nav { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+
+      #intro {
+        padding: 64px 20px 48px;
+      }
+
+      .intro-heading { font-size: clamp(34px, 9vw, 52px); }
+
+      #methodology {
+        grid-template-columns: 1fr;
+        padding: 48px 20px;
+        gap: 32px;
+      }
+
+      .methodology-image { order: -1; height: 55vw; min-height: 240px; }
+
+      #lectures { padding: 48px 20px 64px; }
+
+      .guest-list { grid-template-columns: 1fr 1fr; }
+
+      #apply { padding: 48px 20px; }
+
+      .applicant-type-group { flex-direction: column; }
+
+      footer {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 9px; }
+      .guest-list { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Skip navigation -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ── Nav ─────────────────────────────────────────── -->
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a class="nav-wordmark" href="https://jrwhittaker.co" aria-label="Jonathan R. Whittaker — main site">Jonathan R. Whittaker</a>
+    <ul class="nav-links">
+      <li><a href="#methodology">Approach</a></li>
+      <li><a href="#lectures">Lectures</a></li>
+      <li><a href="#apply">Apply</a></li>
+      <li><a href="https://jrwhittaker.co" target="_blank" rel="noopener" aria-label="Main site, opens in new tab">jrwhittaker.co <span class="nav-ext-arrow" aria-hidden="true">&#8599;</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Main content ──────────────────────────────────── -->
+
+  <main id="main-content">
+
+    <!-- ── Intro ─────────────────────────────────────── -->
+
+    <section id="intro" aria-label="Introduction">
+      <h1 class="intro-heading">Education &amp; Consulting</h1>
+      <p class="intro-dek">One-on-one mentorship and application consulting for filmmakers — including high school students applying to performing arts programs and college applicants to film programs. Sessions available virtually and in person in New York.</p>
+    </section>
+
+    <!-- ── Methodology ───────────────────────────────── -->
+
+    <section id="methodology" aria-labelledby="methodology-heading">
+
+      <div>
+        <span class="section-label">Approach</span>
+        <h2 class="methodology-heading" id="methodology-heading">The work of asking the right questions.</h2>
+        <div class="methodology-body">
+          <p>For eighteen years I taught and chaired the film department at the New York Film Academy, building curriculum deployed across twenty countries. The methodology was always the same: lead with questions, not answers. Help the filmmaker find the story only they can tell.</p>
+          <p>That same approach applies whether I am working with a director on set, a producer in development, or a student preparing their portfolio for conservatory or college admissions.</p>
+          <p>If you are a student applying to a performing arts high school or a college film program, I work with you the same way I work with any filmmaker. We find your story. We make sure every choice is in service to it.</p>
+        </div>
+      </div>
+
+      <div class="methodology-image">
+        <img
+          src="images/directing-outdoor.jpeg"
+          alt="Jonathan R. Whittaker directing on location with students."
+        >
+      </div>
+
+    </section>
+
+    <!-- ── Guest Lectures ────────────────────────────── -->
+
+    <section id="lectures" aria-labelledby="lectures-heading">
+      <span class="section-label" id="lectures-heading">Guest Lectures &amp; Masterclasses</span>
+      <ul class="guest-list" aria-label="Institutions where Jonathan R. Whittaker has given guest lectures and masterclasses">
+        <li>Beijing Film Academy</li>
+        <li>Shanghai Theatre Academy</li>
+        <li>King Saud University</li>
+        <li>Dar Al-Hekma University</li>
+        <li>Tecnologico de Monterrey, four campuses</li>
+        <li>UNIVA Guadalajara</li>
+        <li>US Embassy Programs, Nigeria, Kenya, Ghana, South Africa</li>
+        <li>Saudi Film Festival</li>
+        <li>MultiChoice Talent Factory, Africa</li>
+        <li>All American High School Film Festival</li>
+      </ul>
+    </section>
+
+    <!-- ── Apply / Intake ────────────────────────────── -->
+
+    <section id="apply" aria-labelledby="apply-heading">
+
+      <span class="section-label">Apply</span>
+      <h2 class="apply-heading" id="apply-heading">Let's talk about your application.</h2>
+      <p class="apply-dek">Tell me a bit about where you are in the process. I respond to every inquiry personally, usually within two business days.</p>
+
+      <form
+        class="intake-form"
+        name="consulting-intake"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/thank-you.html"
+      >
+        <input type="hidden" name="form-name" value="consulting-intake">
+        <p class="hidden-field">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+
+        <fieldset class="form-row">
+          <legend style="font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#888888; margin-bottom:8px;">I am applying as a</legend>
+          <div class="applicant-type-group" role="radiogroup" aria-label="Applicant type">
+            <div class="applicant-type-option">
+              <input type="radio" id="type-hs" name="applicant_type" value="High School Applicant" required>
+              <label for="type-hs">High School Applicant</label>
+            </div>
+            <div class="applicant-type-option">
+              <input type="radio" id="type-college" name="applicant_type" value="College Applicant" required>
+              <label for="type-college">College Applicant</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-row">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full_name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone <span style="text-transform:none; font-weight:400;">(optional)</span></label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <!-- High school specific fields -->
+        <div class="conditional-fields" id="fields-hs">
+          <div class="form-row">
+            <label for="hs-school">Current School</label>
+            <input type="text" id="hs-school" name="current_school">
+          </div>
+          <div class="form-row">
+            <label for="hs-grad-year">Expected Graduation Year</label>
+            <input type="text" id="hs-grad-year" name="expected_graduation_year">
+          </div>
+          <div class="form-row">
+            <label for="hs-programs">Program(s) You're Applying To</label>
+            <input type="text" id="hs-programs" name="hs_programs_applying_to" placeholder="e.g. performing arts high school, conservatory">
+          </div>
+        </div>
+
+        <!-- College specific fields -->
+        <div class="conditional-fields" id="fields-college">
+          <div class="form-row">
+            <label for="college-current-school">Current School</label>
+            <input type="text" id="college-current-school" name="current_school_college">
+          </div>
+          <div class="form-row">
+            <label for="college-programs">College Film Program(s) You're Applying To</label>
+            <input type="text" id="college-programs" name="college_programs_applying_to">
+          </div>
+          <div class="form-row">
+            <label for="college-deadline">Application Deadline</label>
+            <input type="text" id="college-deadline" name="application_deadline">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">What would you like help with?</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="intake-submit">Submit Inquiry</button>
+      </form>
+
+      <p class="apply-alt">Prefer to talk it through first? <a href="https://calendly.com/jrw-jrwhittaker/initial-consult" target="_blank" rel="noopener">Schedule a call directly</a>, or email <a href="mailto:jrw@jrwhittaker.co">jrw@jrwhittaker.co</a>.</p>
+
+    </section>
+
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+
+  <footer role="contentinfo" aria-label="Site footer">
+    <span class="footer-copy">&copy; 2026 Jonathan R. Whittaker</span>
+    <div class="footer-links">
+      <a href="https://jrwhittaker.co">Main Site</a>
+      <a href="mailto:jrw@jrwhittaker.co">Email</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var radios = document.querySelectorAll('input[name="applicant_type"]');
+      var fieldsHs = document.getElementById('fields-hs');
+      var fieldsCollege = document.getElementById('fields-college');
+
+      function updateVisibleFields() {
+        var selected = document.querySelector('input[name="applicant_type"]:checked');
+        fieldsHs.classList.remove('is-visible');
+        fieldsCollege.classList.remove('is-visible');
+        if (!selected) return;
+        if (selected.value === 'High School Applicant') {
+          fieldsHs.classList.add('is-visible');
+        } else if (selected.value === 'College Applicant') {
+          fieldsCollege.classList.add('is-visible');
+        }
+      }
+
+      radios.forEach(function (radio) {
+        radio.addEventListener('change', updateVisibleFields);
+      });
+    })();
+  </script>
+
+</body>
+</html>
