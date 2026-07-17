@@ -222,9 +222,64 @@
 
     .hero-bottom a:hover { color: #111111; }
 
+    /* ── Nav external links ──────────────────────────── */
+
+    .nav-ext-arrow {
+      display: inline-block;
+      margin-left: 3px;
+      font-size: 10px;
+      opacity: 0.55;
+    }
+
+    /* ── Stills ──────────────────────────────────────── */
+
+    #stills {
+      background: #111111;
+    }
+
+    .stills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .stills-item {
+      aspect-ratio: 4 / 5;
+      background: #EFEFEA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .stills-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stills-placeholder {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a8a6a0;
+      text-align: center;
+      padding: 0 12px;
+    }
+
+    .stills-label-wrap {
+      padding: 40px 40px 24px;
+    }
+
+    .stills-label-wrap .section-label {
+      color: #50FA7B;
+      border-bottom-color: #50FA7B;
+    }
+
     /* ── Selected Work ───────────────────────────────── */
 
-    #director {
+    #work {
       display: block;
       width: 100%;
       position: relative;
@@ -285,91 +340,6 @@
       color: #555555;
       line-height: 1.5;
       margin-top: 2px;
-    }
-
-    /* ── Mentor & Educator ───────────────────────────── */
-
-    #educator {
-      background: #EFEFEA;
-      border-top: 1px solid #111111;
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: stretch;
-      min-height: 600px;
-    }
-
-    .educator-text-col {
-      padding: 64px 56px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-right: 1px solid #d8d8d4;
-    }
-
-    .educator-heading {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 40px;
-      font-weight: 700;
-      font-style: italic;
-      line-height: 1.15;
-      color: #111111;
-      margin-bottom: 28px;
-    }
-
-    .educator-body {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .educator-body p {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 1.85;
-      color: #333333;
-    }
-
-    .educator-image-col {
-      overflow: hidden;
-    }
-
-    .educator-image-col img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Guest lectures subsection */
-    .guest-lectures {
-      margin-top: 36px;
-      padding-top: 28px;
-      border-top: 1px solid #d8d8d4;
-    }
-
-    .guest-lectures-label {
-      display: block;
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      color: #50FA7B;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .guest-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 24px;
-    }
-
-    .guest-list li {
-      font-size: 14px;
-      font-weight: 400;
-      color: #888888;
-      line-height: 1.5;
     }
 
     /* ── About ───────────────────────────────────────── */
@@ -559,26 +529,22 @@
         margin-bottom: 20px;
       }
 
-      #educator,
+      .stills-label-wrap {
+        padding: 28px 20px 16px;
+      }
+
+      .stills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       #about {
         grid-template-columns: 1fr;
         min-height: auto;
       }
 
-      .educator-text-col {
-        padding: 48px 20px;
-        border-right: none;
-        border-bottom: 1px solid #1e1e1e;
-        order: -1;
-      }
-
-      .educator-image-col,
       .about-image-col {
         height: 60vw;
         min-height: 280px;
-      }
-
-      .about-image-col {
         border-right: none;
         border-bottom: 1px solid #d8d8d4;
       }
@@ -587,11 +553,7 @@
         padding: 48px 20px;
       }
 
-      .guest-list {
-        grid-template-columns: 1fr;
-      }
-
-      #director,
+      #work,
       #contact {
         padding: 48px 20px;
       }
@@ -621,10 +583,11 @@
   <nav role="navigation" aria-label="Main navigation">
     <a class="nav-wordmark" href="#hero" aria-label="Jonathan R. Whittaker — home">Jonathan R. Whittaker</a>
     <ul class="nav-links">
-      <li><a href="#director">Director</a></li>
-      <li><a href="#educator">Educator</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="https://consulting.jrwhittaker.co" target="_blank" rel="noopener" aria-label="Education and Consulting, opens in new tab">Education &amp; Consulting <span class="nav-ext-arrow" aria-hidden="true">&#8599;</span></a></li>
+      <li><a href="https://faloefoundry.com" target="_blank" rel="noopener" aria-label="Faloe Foundry, opens in new tab">Faloe Foundry <span class="nav-ext-arrow" aria-hidden="true">&#8599;</span></a></li>
     </ul>
   </nav>
 
@@ -667,9 +630,33 @@
 
     </section>
 
+    <!-- ── Stills ─────────────────────────────────────────
+         Each .stills-item below is a placeholder. To swap in a
+         real image, replace the .stills-placeholder div inside
+         an item with: <img src="images/still-XX.jpeg" alt="...">
+         Keep the six roughly split across the three categories
+         noted in each placeholder label. -->
+
+    <section id="stills" aria-labelledby="stills-heading">
+
+      <div class="stills-label-wrap">
+        <span class="section-label" id="stills-heading">Stills</span>
+      </div>
+
+      <div class="stills-grid">
+        <div class="stills-item"><div class="stills-placeholder">On Set, 01</div></div>
+        <div class="stills-item"><div class="stills-placeholder">On Set, 02</div></div>
+        <div class="stills-item"><div class="stills-placeholder">Teaching, 01</div></div>
+        <div class="stills-item"><div class="stills-placeholder">Teaching, 02</div></div>
+        <div class="stills-item"><div class="stills-placeholder">Personal Work, 01</div></div>
+        <div class="stills-item"><div class="stills-placeholder">Personal Work, 02</div></div>
+      </div>
+
+    </section>
+
     <!-- ── Selected Work ───────────────────────────────── -->
 
-    <section id="director" aria-labelledby="work-heading">
+    <section id="work" aria-labelledby="work-heading">
 
       <span class="section-label" id="work-heading">Selected Work</span>
 
@@ -833,45 +820,6 @@
 
         </div>
 
-      </div>
-
-    </section>
-
-    <!-- ── Mentor & Educator ────────────────────────────── -->
-
-    <section id="educator" aria-labelledby="educator-heading">
-
-      <div class="educator-text-col">
-        <span class="section-label">Mentor &amp; Educator</span>
-        <h2 class="educator-heading" id="educator-heading">The work of asking the right questions.</h2>
-        <div class="educator-body">
-          <p>For eighteen years I taught and chaired the film department at the New York Film Academy, building curriculum deployed across twenty countries. The methodology was always the same: lead with questions, not answers. Help the filmmaker find the story only they can tell.</p>
-          <p>That same approach applies whether I am working with a director on set, a producer in development, or a student preparing their portfolio for conservatory or college admissions.</p>
-          <p>If you are a student applying to a performing arts high school or a college film program, I work with you the same way I work with any filmmaker. We find your story. We make sure every choice is in service to it. Sessions are available virtually and in person in New York.</p>
-        </div>
-
-        <div class="guest-lectures">
-          <span class="guest-lectures-label">Guest Lectures &amp; Masterclasses</span>
-          <ul class="guest-list" aria-label="Institutions where Jonathan R. Whittaker has given guest lectures and masterclasses">
-            <li>Beijing Film Academy</li>
-            <li>Shanghai Theatre Academy</li>
-            <li>King Saud University</li>
-            <li>Dar Al-Hekma University</li>
-            <li>Tecnologico de Monterrey, four campuses</li>
-            <li>UNIVA Guadalajara</li>
-            <li>US Embassy Programs, Nigeria, Kenya, Ghana, South Africa</li>
-            <li>Saudi Film Festival</li>
-            <li>MultiChoice Talent Factory, Africa</li>
-            <li>All American High School Film Festival</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="educator-image-col">
-        <img
-          src="images/directing-outdoor.jpeg"
-          alt="Jonathan R. Whittaker directing on location with students."
-        >
       </div>
 
     </section>
