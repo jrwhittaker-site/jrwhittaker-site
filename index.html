@@ -233,7 +233,7 @@
 
     /* ── Stills ──────────────────────────────────────── */
 
-    #stills {
+    .stills-section {
       background: #111111;
     }
 
@@ -256,16 +256,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .stills-placeholder {
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #a8a6a0;
-      text-align: center;
-      padding: 0 12px;
     }
 
     .stills-label-wrap {
@@ -533,10 +523,6 @@
         padding: 28px 20px 16px;
       }
 
-      .stills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
       #about {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -631,13 +617,9 @@
     </section>
 
     <!-- ── Stills ─────────────────────────────────────────
-         Each .stills-item below is a placeholder. To swap in a
-         real image, replace the .stills-placeholder div inside
-         an item with: <img src="images/still-XX.jpeg" alt="...">
-         Keep the six roughly split across the three categories
-         noted in each placeholder label. -->
+         Two rows of three, split around Selected Work. -->
 
-    <section id="stills" aria-labelledby="stills-heading">
+    <section id="stills" class="stills-section" aria-labelledby="stills-heading">
 
       <div class="stills-label-wrap">
         <span class="section-label" id="stills-heading">Stills</span>
@@ -647,9 +629,6 @@
         <div class="stills-item"><img src="images/still-ceiling.jpeg" alt="Ornate calligraphic ceiling medallion."></div>
         <div class="stills-item"><img src="images/still-stairwell.jpeg" alt="A square spiral stairwell viewed from above, red neon glowing at the center."></div>
         <div class="stills-item"><img src="images/still-toilets.jpeg" alt="Two toilets in adjoining stalls, each stacked with rolls of toilet paper."></div>
-        <div class="stills-item"><img src="images/still-fishermen.jpeg" alt="Two fishermen on a boat on the Bosphorus, Istanbul, with the city skyline behind them."></div>
-        <div class="stills-item"><img src="images/still-eyeball.jpeg" alt="A large sculptural eyeball lit up at night against a city skyline."></div>
-        <div class="stills-item"><img src="images/still-cemetery.jpeg" alt="St. Louis Cemetery, New Orleans, tombs beneath a storm sky with the downtown skyline behind."></div>
       </div>
 
     </section>
@@ -820,6 +799,18 @@
 
         </div>
 
+      </div>
+
+    </section>
+
+    <!-- ── Stills, continued ─────────────────────────────── -->
+
+    <section class="stills-section" aria-label="More stills">
+
+      <div class="stills-grid">
+        <div class="stills-item"><img src="images/still-fishermen.jpeg" alt="Two fishermen on a boat on the Bosphorus, Istanbul, with the city skyline behind them."></div>
+        <div class="stills-item"><img src="images/still-eyeball.jpeg" alt="A large sculptural eyeball lit up at night against a city skyline."></div>
+        <div class="stills-item"><img src="images/still-cemetery.jpeg" alt="St. Louis Cemetery, New Orleans, tombs beneath a storm sky with the downtown skyline behind."></div>
       </div>
 
     </section>
