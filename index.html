@@ -149,7 +149,8 @@
       min-height: 0;
     }
 
-    .hero-portrait-wrap img {
+    .hero-portrait-wrap img,
+    .hero-portrait-wrap video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -230,6 +231,90 @@
       font-size: 10px;
       opacity: 0.55;
     }
+
+    /* ── Featured ────────────────────────────────────── */
+
+    .featured-section    { background: #0f0f0f; }
+    .featured-label-wrap { padding: 40px 40px 24px; }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .featured-item { display: flex; flex-direction: column; }
+
+    /* Shared poster box — used by both link tiles and video tiles. */
+    .tile-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: none;
+      background: #111111 center / cover no-repeat;
+      display: grid;
+      place-items: center;
+    }
+
+    .tile-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.15);
+      transition: background 0.2s;
+    }
+
+    .tile-media:hover::after { background: rgba(0, 0, 0, 0); }
+
+    /* Play button — video tiles. */
+    .video-play {
+      position: relative;
+      z-index: 1;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #50FA7B;
+      display: grid;
+      place-items: center;
+    }
+
+    .video-play::before {
+      content: '';
+      margin-left: 4px;
+      border-style: solid;
+      border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #0f0f0f;
+    }
+
+    /* External arrow — link tiles. */
+    .tile-arrow {
+      position: relative;
+      z-index: 1;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #50FA7B;
+      color: #0f0f0f;
+      font-size: 24px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Vimeo iframe swapped in on click. */
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .featured-caption              { padding: 14px 4px 24px; }
+    .featured-caption .work-title  { color: #e0e0e0; }
+    .featured-caption .work-detail { color: #888888; }
 
     /* ── Stills ──────────────────────────────────────── */
 
@@ -522,6 +607,12 @@
         padding: 28px 20px 16px;
       }
 
+      .featured-grid { grid-template-columns: 1fr; }
+
+      .featured-label-wrap {
+        padding: 28px 20px 16px;
+      }
+
       #about {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -586,10 +677,18 @@
 
       <div class="hero-left">
         <div class="hero-portrait-wrap">
-          <img
-            src="images/portrait.jpeg"
-            alt="Jonathan R. Whittaker, director and educator, New York."
-          >
+          <!-- Shows the portrait poster until videos/hero-loop.* exist, then loops muted.
+               Optional and independent of the Featured band — revert this block to the
+               <img> if you decide against a hero loop. -->
+          <video
+            class="hero-portrait-video"
+            autoplay muted loop playsinline
+            preload="metadata"
+            poster="images/portrait.jpeg"
+            aria-label="Jonathan R. Whittaker, director and educator, New York.">
+            <source src="videos/hero-loop.webm" type="video/webm">
+            <source src="videos/hero-loop.mp4"  type="video/mp4">
+          </video>
         </div>
         <p class="hero-caption">Even a small kiss of light is enough to ignite a spark.</p>
       </div>
@@ -610,6 +709,118 @@
           <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on IMDb (opens in new tab)">IMDb</a>
           <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on LinkedIn (opens in new tab)">LinkedIn</a>
         </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── Featured ────────────────────────────────────────
+         Poster tiles, two kinds:
+           • Link tile:  <a class="tile-media" href="...">          → opens a project site
+           • Video tile: <button class="tile-media" data-vimeo="ID"> → plays Vimeo in place
+         Before deploy: add poster images to /images and real hrefs / Vimeo IDs. -->
+
+    <section id="featured" class="featured-section" aria-labelledby="featured-heading">
+
+      <div class="featured-label-wrap">
+        <span class="section-label" id="featured-heading">Featured</span>
+      </div>
+
+      <div class="featured-grid">
+
+        <!-- ── Motion (Vimeo) ──────────────────────────────
+             Click loads the player in place. Reorder by moving whole <figure> blocks.
+             Swap a video: change data-vimeo + the poster image + the caption. -->
+
+        <figure class="featured-item">
+          <button class="tile-media" data-vimeo="48603731"
+                  style="background-image:url('images/featured-gillette.jpg')"
+                  aria-label="Play: Venus by Gillette">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+          <figcaption class="featured-caption">
+            <span class="work-title">Venus by Gillette</span>
+            <span class="work-detail">Director &mdash; Chrissy Teigen, 2012</span>
+          </figcaption>
+        </figure>
+
+        <figure class="featured-item">
+          <button class="tile-media" data-vimeo="436816139"
+                  style="background-image:url('images/featured-mater.jpg')"
+                  aria-label="Play: Mater Iniciativa">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+          <figcaption class="featured-caption">
+            <span class="work-title">Mater Iniciativa</span>
+            <span class="work-detail">Director &mdash; Virgilio Mart&iacute;nez, Cusco, 2020</span>
+          </figcaption>
+        </figure>
+
+        <figure class="featured-item">
+          <button class="tile-media" data-vimeo="47206767"
+                  style="background-image:url('images/featured-modelo.jpg')"
+                  aria-label="Play: Modelo Especial">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+          <figcaption class="featured-caption">
+            <span class="work-title">Modelo Especial</span>
+            <span class="work-detail">Director &mdash; Clint Dempsey, 2011</span>
+          </figcaption>
+        </figure>
+
+        <figure class="featured-item">
+          <button class="tile-media" data-vimeo="47194530"
+                  style="background-image:url('images/featured-nissan.jpg')"
+                  aria-label="Play: Nissan Juke">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+          <figcaption class="featured-caption">
+            <span class="work-title">Nissan Juke</span>
+            <span class="work-detail">Director &mdash; 2011</span>
+          </figcaption>
+        </figure>
+
+        <figure class="featured-item">
+          <button class="tile-media" data-vimeo="145285003"
+                  style="background-image:url('images/featured-unborn.jpg')"
+                  aria-label="Play: Unborn Child">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+          <figcaption class="featured-caption">
+            <span class="work-title">Unborn Child</span>
+            <span class="work-detail">Director &mdash; Banky W &amp; Lynxxx, 2014</span>
+          </figcaption>
+        </figure>
+
+        <figure class="featured-item">
+          <button class="tile-media" data-vimeo="128603638"
+                  style="background-image:url('images/featured-hello.jpg')"
+                  aria-label="Play: Hello Oral Care">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+          <figcaption class="featured-caption">
+            <span class="work-title">Hello Oral Care</span>
+            <span class="work-detail">Director &mdash; UK national commercial, 2014</span>
+          </figcaption>
+        </figure>
+
+        <!-- ── Project links (poster tile that opens an external site) ──
+             Every Living Thing: href is set; just add a 16:9 images/featured-elt.jpg,
+             then uncomment. Absolut: awaiting its project URL + poster.
+        <figure class="featured-item">
+          <a class="tile-media"
+             href="https://eltfilm.com"
+             target="_blank" rel="noopener"
+             style="background-image:url('images/featured-elt.jpg')"
+             aria-label="Every Living Thing, visit project site (opens in new tab)">
+            <span class="tile-arrow" aria-hidden="true">&#8599;</span>
+          </a>
+          <figcaption class="featured-caption">
+            <span class="work-title">Every Living Thing</span>
+            <span class="work-detail">Documentary &mdash; 2026</span>
+          </figcaption>
+        </figure>
+        -->
 
       </div>
 
@@ -864,6 +1075,29 @@
       <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on LinkedIn (opens in new tab)">LinkedIn</a>
     </div>
   </footer>
+
+  <!-- ── Scripts ──────────────────────────────────────── -->
+  <script>
+    // Load the Vimeo player only on click — keeps the initial page fast.
+    document.querySelectorAll('.tile-media[data-vimeo]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var f = document.createElement('iframe');
+        f.className = 'video-frame';
+        f.src = 'https://player.vimeo.com/video/' + el.getAttribute('data-vimeo') +
+                '?autoplay=1&color=50fa7b&title=0&byline=0&portrait=0&dnt=1';
+        f.allow = 'autoplay; fullscreen; picture-in-picture';
+        f.setAttribute('allowfullscreen', '');
+        el.replaceWith(f);
+      }, { once: true });
+    });
+
+    // Respect reduced-motion for the hero loop (poster still remains).
+    var hv = document.querySelector('.hero-portrait-video');
+    if (hv && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      hv.removeAttribute('autoplay');
+      hv.pause();
+    }
+  </script>
 
 </body>
 </html>
