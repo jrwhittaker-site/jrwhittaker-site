@@ -245,122 +245,9 @@
       line-height: 1.6;
     }
 
-    form.intake-form {
+    .tally-embed-wrap {
       max-width: 560px;
     }
-
-    .hidden-field {
-      position: absolute;
-      left: -9999px;
-    }
-
-    .applicant-type-group {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .applicant-type-option {
-      flex: 1;
-    }
-
-    .applicant-type-option input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .applicant-type-option label {
-      display: block;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #555555;
-      background: #ffffff;
-      border: 1px solid #d8d8d4;
-      padding: 16px 12px;
-      cursor: pointer;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-    }
-
-    .applicant-type-option input:checked + label {
-      background: #111111;
-      border-color: #111111;
-      color: #50FA7B;
-    }
-
-    .applicant-type-option input:focus-visible + label {
-      outline: 2px solid #50FA7B;
-      outline-offset: 2px;
-    }
-
-    .form-row {
-      margin-bottom: 20px;
-    }
-
-    .form-row label {
-      display: block;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #888888;
-      margin-bottom: 8px;
-    }
-
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
-      width: 100%;
-      background: #ffffff;
-      border: 1px solid #d8d8d4;
-      color: #111111;
-      font-family: inherit;
-      font-size: 16px;
-      padding: 12px 14px;
-    }
-
-    .form-row textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .form-row input:focus,
-    .form-row select:focus,
-    .form-row textarea:focus {
-      outline: 2px solid #50FA7B;
-      outline-offset: 1px;
-      border-color: #50FA7B;
-    }
-
-    .conditional-fields {
-      display: none;
-    }
-
-    .conditional-fields.is-visible {
-      display: block;
-    }
-
-    .intake-submit {
-      display: inline-block;
-      background: #50FA7B;
-      color: #0f0f0f;
-      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 0;
-      padding: 14px 28px;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      margin-top: 8px;
-    }
-
-    .intake-submit:hover { opacity: 0.85; }
 
     .apply-alt {
       margin-top: 32px;
@@ -435,8 +322,6 @@
       .guest-list { grid-template-columns: 1fr 1fr; }
 
       #apply { padding: 48px 20px; }
-
-      .applicant-type-group { flex-direction: column; }
 
       footer {
         padding: 16px 20px;
@@ -531,87 +416,18 @@
       <h2 class="apply-heading" id="apply-heading">Let's talk about your application.</h2>
       <p class="apply-dek">Tell me a bit about where you are in the process. I respond to every inquiry personally, usually within two business days.</p>
 
-      <form
-        class="intake-form"
-        name="consulting-intake"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        action="/thank-you.html"
-      >
-        <input type="hidden" name="form-name" value="consulting-intake">
-        <p class="hidden-field">
-          <label>Don't fill this out if you're human: <input name="bot-field"></label>
-        </p>
-
-        <fieldset class="form-row">
-          <legend style="font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#888888; margin-bottom:8px;">I am applying as a</legend>
-          <div class="applicant-type-group" role="radiogroup" aria-label="Applicant type">
-            <div class="applicant-type-option">
-              <input type="radio" id="type-hs" name="applicant_type" value="High School Applicant" required>
-              <label for="type-hs">High School Applicant</label>
-            </div>
-            <div class="applicant-type-option">
-              <input type="radio" id="type-college" name="applicant_type" value="College Applicant" required>
-              <label for="type-college">College Applicant</label>
-            </div>
-          </div>
-        </fieldset>
-
-        <div class="form-row">
-          <label for="full-name">Full Name</label>
-          <input type="text" id="full-name" name="full_name" required>
-        </div>
-
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-row">
-          <label for="phone">Phone <span style="text-transform:none; font-weight:400;">(optional)</span></label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-
-        <!-- High school specific fields -->
-        <div class="conditional-fields" id="fields-hs">
-          <div class="form-row">
-            <label for="hs-school">Current School</label>
-            <input type="text" id="hs-school" name="current_school">
-          </div>
-          <div class="form-row">
-            <label for="hs-grad-year">Expected Graduation Year</label>
-            <input type="text" id="hs-grad-year" name="expected_graduation_year">
-          </div>
-          <div class="form-row">
-            <label for="hs-programs">Program(s) You're Applying To</label>
-            <input type="text" id="hs-programs" name="hs_programs_applying_to" placeholder="e.g. performing arts high school, conservatory">
-          </div>
-        </div>
-
-        <!-- College specific fields -->
-        <div class="conditional-fields" id="fields-college">
-          <div class="form-row">
-            <label for="college-current-school">Current School</label>
-            <input type="text" id="college-current-school" name="current_school_college">
-          </div>
-          <div class="form-row">
-            <label for="college-programs">College Film Program(s) You're Applying To</label>
-            <input type="text" id="college-programs" name="college_programs_applying_to">
-          </div>
-          <div class="form-row">
-            <label for="college-deadline">Application Deadline</label>
-            <input type="text" id="college-deadline" name="application_deadline">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label for="message">What would you like help with?</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button type="submit" class="intake-submit">Submit Inquiry</button>
-      </form>
+      <div class="tally-embed-wrap">
+        <iframe
+          data-tally-src="https://tally.so/embed/LZaj81?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="500"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Education & Consulting Intake"
+        ></iframe>
+      </div>
 
       <p class="apply-alt">Prefer to talk it through first? <a href="https://calendly.com/jrw-jrwhittaker/initial-consult" target="_blank" rel="noopener">Schedule a call directly</a>, or email <a href="mailto:jrw@jrwhittaker.co">jrw@jrwhittaker.co</a>.</p>
 
@@ -630,27 +446,19 @@
   </footer>
 
   <script>
-    (function () {
-      var radios = document.querySelectorAll('input[name="applicant_type"]');
-      var fieldsHs = document.getElementById('fields-hs');
-      var fieldsCollege = document.getElementById('fields-college');
-
-      function updateVisibleFields() {
-        var selected = document.querySelector('input[name="applicant_type"]:checked');
-        fieldsHs.classList.remove('is-visible');
-        fieldsCollege.classList.remove('is-visible');
-        if (!selected) return;
-        if (selected.value === 'High School Applicant') {
-          fieldsHs.classList.add('is-visible');
-        } else if (selected.value === 'College Applicant') {
-          fieldsCollege.classList.add('is-visible');
-        }
-      }
-
-      radios.forEach(function (radio) {
-        radio.addEventListener('change', updateVisibleFields);
+    var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
+      "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+        e.src = e.dataset.tallySrc;
       });
-    })();
+    };
+    if ("undefined" != typeof Tally) v();
+    else if (d.querySelector('script[src="' + w + '"]') == null) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
   </script>
 
 </body>
