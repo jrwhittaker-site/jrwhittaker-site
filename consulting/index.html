@@ -32,11 +32,19 @@
     html { scroll-behavior: smooth; }
 
     /* Accent: keep in sync with the homepage (jrwhittaker.co). */
-    :root { --accent: #16B5A3; }
+    :root {
+      --accent: #16B5A3;
+      --bg:     #EFEFEA;   /* page background, the hero off-white */
+      --text:   #111111;   /* headings, primary text */
+      --body:   #333333;   /* body copy */
+      --muted:  #555555;   /* secondary text */
+      --faint:  #6e6e6e;   /* tertiary text */
+      --rule:   #d8d8d4;   /* hairline dividers */
+    }
 
     body {
-      background: #0f0f0f;
-      color: #e0e0e0;
+      background: var(--bg);
+      color: var(--body);
       font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
       font-size: 18px;
       line-height: 1.6;
@@ -78,7 +86,7 @@
       font-size: 9px;
       font-weight: 500;
       letter-spacing: 0.3em;
-      color: #111111;
+      color: var(--text);
       text-transform: uppercase;
       margin-bottom: 28px;
       border-bottom: 1px solid var(--accent);
@@ -91,8 +99,8 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 200;
-      background: #0f0f0f;
-      border-bottom: 1px solid #1e1e1e;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
       height: 44px;
       display: flex;
       align-items: center;
@@ -104,7 +112,7 @@
       font-size: 15px;
       font-weight: 400;
       letter-spacing: 0.12em;
-      color: #e0e0e0;
+      color: var(--text);
       text-decoration: none;
     }
 
@@ -118,13 +126,13 @@
       font-size: 12px;
       font-weight: 400;
       letter-spacing: 0.15em;
-      color: #a0a0a0;
+      color: var(--muted);
       text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: #e0e0e0; }
+    .nav-links a:hover { color: var(--text); }
 
     .nav-ext-arrow {
       display: inline-block;
@@ -154,15 +162,15 @@
     .intro-dek {
       font-size: 20px;
       font-weight: 400;
-      color: #b0b0b0;
+      color: var(--body);
       line-height: 1.6;
     }
 
     /* ── Methodology ─────────────────────────────────── */
 
     #methodology {
-      background: #EFEFEA;
-      border-top: 1px solid #111111;
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
       padding: 80px 40px;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -176,7 +184,7 @@
       font-weight: 700;
       font-style: italic;
       line-height: 1.2;
-      color: #111111;
+      color: var(--text);
       margin-bottom: 24px;
     }
 
@@ -184,7 +192,7 @@
       font-size: 18px;
       font-weight: 400;
       line-height: 1.85;
-      color: #333333;
+      color: var(--body);
       margin-bottom: 18px;
     }
 
@@ -203,8 +211,8 @@
     /* ── Guest Lectures ──────────────────────────────── */
 
     #lectures {
-      background: #EFEFEA;
-      border-top: 1px solid #111111;
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
       padding: 64px 40px 80px;
     }
 
@@ -219,15 +227,15 @@
     .guest-list li {
       font-size: 14px;
       font-weight: 400;
-      color: #888888;
+      color: var(--faint);
       line-height: 1.5;
     }
 
     /* ── Apply / Intake ──────────────────────────────── */
 
     #apply {
-      background: #EFEFEA;
-      border-top: 1px solid #111111;
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
       padding: 80px 40px;
     }
 
@@ -236,13 +244,13 @@
       font-size: 40px;
       font-weight: 700;
       line-height: 1.15;
-      color: #111111;
+      color: var(--text);
       margin-bottom: 12px;
     }
 
     .apply-dek {
       font-size: 17px;
-      color: #555555;
+      color: var(--muted);
       margin-bottom: 40px;
       max-width: 560px;
       line-height: 1.6;
@@ -255,7 +263,7 @@
     .apply-alt {
       margin-top: 32px;
       font-size: 14px;
-      color: #555555;
+      color: var(--muted);
     }
 
     .apply-alt a {
@@ -264,13 +272,13 @@
       transition: color 0.2s;
     }
 
-    .apply-alt a:hover { color: #111111; }
+    .apply-alt a:hover { color: var(--text); }
 
     /* ── Footer ──────────────────────────────────────── */
 
     footer {
-      background: #080808;
-      border-top: 1px solid #1a1a1a;
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
       padding: 16px 40px;
       display: flex;
       align-items: center;
@@ -280,7 +288,7 @@
     .footer-copy {
       font-size: 13px;
       font-weight: 400;
-      color: #2a2a2a;
+      color: var(--muted);
       letter-spacing: 0.04em;
     }
 
@@ -290,14 +298,14 @@
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.12em;
-      color: #2a2a2a;
+      color: var(--muted);
       text-decoration: underline;
       text-underline-offset: 3px;
       text-transform: uppercase;
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: #e0e0e0; }
+    .footer-links a:hover { color: var(--text); }
 
     /* ── Responsive ──────────────────────────────────── */
 

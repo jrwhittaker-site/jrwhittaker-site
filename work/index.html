@@ -32,11 +32,19 @@
     html { scroll-behavior: smooth; }
 
     /* Accent: keep in sync with the homepage (jrwhittaker.co). */
-    :root { --accent: #16B5A3; }
+    :root {
+      --accent: #16B5A3;
+      --bg:     #EFEFEA;   /* page background, the hero off-white */
+      --text:   #111111;   /* headings, primary text */
+      --body:   #333333;   /* body copy */
+      --muted:  #555555;   /* secondary text */
+      --faint:  #6e6e6e;   /* tertiary text */
+      --rule:   #d8d8d4;   /* hairline dividers */
+    }
 
     body {
-      background: #0f0f0f;
-      color: #e0e0e0;
+      background: var(--bg);
+      color: var(--body);
       font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
       font-size: 18px;
       line-height: 1.6;
@@ -78,7 +86,7 @@
       font-size: 9px;
       font-weight: 500;
       letter-spacing: 0.3em;
-      color: #111111;
+      color: var(--text);
       text-transform: uppercase;
       margin-bottom: 28px;
       border-bottom: 1px solid var(--accent);
@@ -90,8 +98,8 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 200;
-      background: #0f0f0f;
-      border-bottom: 1px solid #1e1e1e;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
       height: 44px;
       display: flex;
       align-items: center;
@@ -103,7 +111,7 @@
       font-size: 15px;
       font-weight: 400;
       letter-spacing: 0.12em;
-      color: #e0e0e0;
+      color: var(--text);
       text-decoration: none;
     }
 
@@ -117,13 +125,13 @@
       font-size: 12px;
       font-weight: 400;
       letter-spacing: 0.15em;
-      color: #a0a0a0;
+      color: var(--muted);
       text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: #e0e0e0; }
+    .nav-links a:hover { color: var(--text); }
 
     .nav-ext-arrow {
       display: inline-block;
@@ -135,7 +143,7 @@
     /* ── Filmography ─────────────────────────────────── */
     #filmography {
       margin-top: 44px;
-      background: #EFEFEA;
+      background: var(--bg);
       padding: 72px 40px 64px;
     }
 
@@ -144,14 +152,14 @@
       font-size: 44px;
       font-weight: 700;
       line-height: 1.15;
-      color: #111111;
+      color: var(--text);
       margin-bottom: 16px;
     }
 
     .filmography-dek {
       font-size: 18px;
       font-weight: 400;
-      color: #333333;
+      color: var(--body);
       line-height: 1.6;
       max-width: 680px;
       margin-bottom: 40px;
@@ -164,7 +172,7 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #111111;
+      color: var(--text);
       text-decoration: underline;
       text-underline-offset: 4px;
       transition: color 0.2s;
@@ -186,7 +194,7 @@
     }
 
     .work-group {
-      border-top: 1px solid #d8d8d4;
+      border-top: 1px solid var(--rule);
       padding: 24px 0;
     }
 
@@ -194,7 +202,7 @@
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.2em;
-      color: #888888;
+      color: var(--faint);
       text-transform: uppercase;
       margin-bottom: 16px;
     }
@@ -211,7 +219,7 @@
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 20px;
       font-weight: 700;
-      color: #111111;
+      color: var(--text);
       line-height: 1.4;
     }
 
@@ -220,15 +228,15 @@
       font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
       font-size: 16px;
       font-weight: 400;
-      color: #555555;
+      color: var(--muted);
       line-height: 1.5;
       margin-top: 2px;
     }
 
     /* ── Footer ──────────────────────────────────────── */
     footer {
-      background: #080808;
-      border-top: 1px solid #1a1a1a;
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
       padding: 16px 40px;
       display: flex;
       align-items: center;
@@ -238,7 +246,7 @@
     .footer-copy {
       font-size: 13px;
       font-weight: 400;
-      color: #2a2a2a;
+      color: var(--muted);
       letter-spacing: 0.04em;
     }
 
@@ -248,14 +256,14 @@
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.12em;
-      color: #2a2a2a;
+      color: var(--muted);
       text-decoration: underline;
       text-underline-offset: 3px;
       text-transform: uppercase;
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: #e0e0e0; }
+    .footer-links a:hover { color: var(--text); }
 
     /* ── Responsive ──────────────────────────────────── */
     @media (max-width: 900px) {
