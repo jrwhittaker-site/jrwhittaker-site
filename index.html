@@ -242,8 +242,47 @@
 
     .featured-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2px;
+    }
+
+    /* Framing line under the section label, so the tiles arrive with context. */
+    .featured-intro {
+      max-width: 620px;
+      margin-top: 4px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #888888;
+    }
+
+    .featured-intro a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .featured-more { padding: 28px 40px 44px; }
+
+    .featured-more a {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #e0e0e0;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s;
+    }
+
+    .featured-more a:hover { color: var(--accent); }
+
+    /* Stills framing note. */
+    .stills-note {
+      padding: 36px 40px 20px;
+      font-size: 13px;
+      font-style: italic;
+      color: #888888;
+      line-height: 1.5;
     }
 
     .featured-item { display: flex; flex-direction: column; }
@@ -364,51 +403,7 @@
       border-bottom-color: var(--accent);
     }
 
-    /* ── Selected Work ───────────────────────────────── */
-
-    #work {
-      display: block;
-      width: 100%;
-      position: relative;
-      clear: both;
-      background: #EFEFEA;
-      border-top: 1px solid #111111;
-      margin-top: 0;
-      padding: 80px 40px 48px;
-    }
-
-    .work-groups {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 56px;
-      align-items: start;
-    }
-
-    .work-col {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .work-group {
-      border-top: 1px solid #d8d8d4;
-      padding: 24px 0;
-    }
-
-    .work-category {
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      color: #888888;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .work-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    /* ── Credit lines (used in the Featured captions) ── */
 
     .work-title {
       display: block;
@@ -574,14 +569,8 @@
 
     /* ── Responsive ──────────────────────────────────── */
 
-    @media (max-width: 900px) {
-      .work-groups {
-        grid-template-columns: 1fr;
-      }
-
-      .work-col {
-        display: contents;
-      }
+    @media (max-width: 1000px) {
+      .featured-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -621,6 +610,10 @@
         padding: 28px 20px 16px;
       }
 
+      .featured-more { padding: 20px 20px 36px; }
+
+      .stills-note { padding: 26px 20px 14px; }
+
       #about {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -637,7 +630,6 @@
         padding: 48px 20px;
       }
 
-      #work,
       #contact {
         padding: 48px 20px;
       }
@@ -667,7 +659,7 @@
   <nav role="navigation" aria-label="Main navigation">
     <a class="nav-wordmark" href="#hero" aria-label="Jonathan R. Whittaker — home">Jonathan R. Whittaker</a>
     <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
+      <li><a href="#featured">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://consulting.jrwhittaker.co" target="_blank" rel="noopener" aria-label="Education and Consulting, opens in new tab">Education &amp; Consulting <span class="nav-ext-arrow" aria-hidden="true">&#8599;</span></a></li>
@@ -732,7 +724,8 @@
     <section id="featured" class="featured-section" aria-labelledby="featured-heading">
 
       <div class="featured-label-wrap">
-        <span class="section-label" id="featured-heading">Featured</span>
+        <span class="section-label" id="featured-heading">Selected Work</span>
+        <p class="featured-intro">A selection of directing and producing work, across commercial, documentary, and branded film. Teaching and portfolio mentorship are at <a href="https://consulting.jrwhittaker.co" target="_blank" rel="noopener">Education &amp; Consulting</a>.</p>
       </div>
 
       <div class="featured-grid">
@@ -847,203 +840,24 @@
 
       </div>
 
+      <div class="featured-more">
+        <a href="/work">Full filmography <span class="nav-ext-arrow" aria-hidden="true">&#8599;</span></a>
+      </div>
+
     </section>
 
     <!-- ── Stills ─────────────────────────────────────────
-         Two rows of three, split around Selected Work. -->
+         One row of three. The note keeps these reading as personal
+         sensibility rather than a photography portfolio. -->
 
     <section id="stills" class="stills-section" aria-label="Stills">
+
+      <p class="stills-note">How I see when nobody is paying me to look.</p>
 
       <div class="stills-grid">
         <div class="stills-item"><img src="images/still-ceiling.jpeg" alt="Ornate calligraphic ceiling medallion."></div>
         <div class="stills-item"><img src="images/still-stairwell.jpeg" alt="A square spiral stairwell viewed from above, red neon glowing at the center."></div>
         <div class="stills-item"><img src="images/still-toilets.jpeg" alt="Two toilets in adjoining stalls, each stacked with rolls of toilet paper."></div>
-      </div>
-
-    </section>
-
-    <!-- ── Selected Work ───────────────────────────────── -->
-
-    <section id="work" aria-labelledby="work-heading">
-
-      <span class="section-label" id="work-heading">Selected Work</span>
-
-      <div class="work-groups">
-
-        <!-- Left column: Documentary & Broadcast, Commercial & Broadcast, Advisory -->
-        <div class="work-col">
-
-          <div class="work-group">
-            <p class="work-category">Documentary &amp; Broadcast</p>
-            <ul class="work-list">
-              <li>
-                <span class="work-title">Every Living Thing</span>
-                <span class="work-detail">Co-Producer &mdash; Documentary, 2026</span>
-              </li>
-              <li>
-                <span class="work-title">Mater Iniciativa</span>
-                <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
-              </li>
-              <li>
-                <span class="work-title">The Pulse</span>
-                <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
-              </li>
-              <li>
-                <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
-                <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="work-group">
-            <p class="work-category">Commercial &amp; Broadcast</p>
-            <ul class="work-list">
-              <li>
-                <span class="work-title">Hyundai Equus</span>
-                <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
-              </li>
-              <li>
-                <span class="work-title">Venus by Gillette</span>
-                <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
-              </li>
-              <li>
-                <span class="work-title">Modelo Especial</span>
-                <span class="work-detail">Director &mdash; Featuring Clint Dempsey, 2011</span>
-              </li>
-              <li>
-                <span class="work-title">Nissan Juke</span>
-                <span class="work-detail">Director &mdash; 2011</span>
-              </li>
-              <li>
-                <span class="work-title">Anabel Mobile</span>
-                <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
-              </li>
-              <li>
-                <span class="work-title">NBA All-Star Promo</span>
-                <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="work-group">
-            <p class="work-category">Advisory &amp; Story Development</p>
-            <ul class="work-list">
-              <li>
-                <span class="work-title">Kr8tiv</span>
-                <span class="work-detail">Creative Producer &mdash; Toronto, 2022 to present</span>
-              </li>
-              <li>
-                <span class="work-title">Special Order</span>
-                <span class="work-detail">Story Producer &mdash; Los Angeles, 2021 to present</span>
-              </li>
-              <li>
-                <span class="work-title">Itaú Foundation</span>
-                <span class="work-detail">Visual Storytelling Workshop Director &mdash; São Paulo, 2019 &amp; 2025</span>
-              </li>
-              <li>
-                <span class="work-title">ABS-CBN &nbsp;|&nbsp; Cinematografo</span>
-                <span class="work-detail">Creative Advisor &mdash; Manila, 2019 to 2021</span>
-              </li>
-              <li>
-                <span class="work-title">Globo</span>
-                <span class="work-detail">Production Training Lead &mdash; Rio de Janeiro, 2019</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- Right column: Narrative, Music Video, Branded Content -->
-        <div class="work-col">
-
-          <div class="work-group">
-            <p class="work-category">Narrative</p>
-            <ul class="work-list">
-              <li>
-                <span class="work-title">Train Baby</span>
-                <span class="work-detail">Producer &mdash; Amazon Prime</span>
-              </li>
-              <li>
-                <span class="work-title">America Here We Come</span>
-                <span class="work-detail">Producer &mdash; Netflix</span>
-              </li>
-              <li>
-                <span class="work-title">A Modo Suo</span>
-                <span class="work-detail">Producer &mdash; Short Film, 2026</span>
-              </li>
-              <li>
-                <span class="work-title">Hidden Love</span>
-                <span class="work-detail">Director &mdash; Short Film, 2023</span>
-              </li>
-              <li>
-                <span class="work-title">Inhale Exhale</span>
-                <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
-              </li>
-              <li>
-                <span class="work-title">Emilia</span>
-                <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
-              </li>
-              <li>
-                <span class="work-title">Down East</span>
-                <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="work-group">
-            <p class="work-category">Music Video</p>
-            <ul class="work-list">
-              <li>
-                <span class="work-title">Luv U Baby</span>
-                <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
-              </li>
-              <li>
-                <span class="work-title">BuzzSessions</span>
-                <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
-              </li>
-              <li>
-                <span class="work-title">Unborn Child</span>
-                <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="work-group">
-            <p class="work-category">Branded Content</p>
-            <ul class="work-list">
-              <li>
-                <span class="work-title">Defender Bar</span>
-                <span class="work-detail">Director &mdash; 2026</span>
-              </li>
-              <li>
-                <span class="work-title">Fort Hamilton Gin</span>
-                <span class="work-detail">Director &mdash; 2025</span>
-              </li>
-              <li>
-                <span class="work-title">Dove Demia</span>
-                <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
-              </li>
-              <li>
-                <span class="work-title">Hello Oral Care</span>
-                <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ── Stills, continued ─────────────────────────────── -->
-
-    <section class="stills-section" aria-label="More stills">
-
-      <div class="stills-grid">
-        <div class="stills-item"><img src="images/still-fishermen.jpeg" alt="Two fishermen on a boat on the Bosphorus, Istanbul, with the city skyline behind them."></div>
-        <div class="stills-item"><img src="images/still-eyeball.jpeg" alt="A large sculptural eyeball lit up at night against a city skyline."></div>
-        <div class="stills-item"><img src="images/still-cemetery.jpeg" alt="St. Louis Cemetery, New Orleans, tombs beneath a storm sky with the downtown skyline behind."></div>
       </div>
 
     </section>

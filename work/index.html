@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Filmography | Jonathan R. Whittaker</title>
+  <meta name="description" content="The complete directing and producing filmography of Jonathan R. Whittaker, including documentary, commercial, narrative, music video, and branded work, with advisory and story development credits.">
+  <link rel="canonical" href="https://jrwhittaker.co/work">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Filmography | Jonathan R. Whittaker">
+  <meta property="og:description" content="The complete directing and producing filmography of Jonathan R. Whittaker.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jrwhittaker.co/work">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Filmography | Jonathan R. Whittaker">
+  <meta name="twitter:description" content="The complete directing and producing filmography of Jonathan R. Whittaker.">
+
+  <style>
+
+    /* ── Reset ───────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* Accent: keep in sync with the homepage (jrwhittaker.co). */
+    :root { --accent: #16B5A3; }
+
+    body {
+      background: #0f0f0f;
+      color: #e0e0e0;
+      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; }
+
+    /* ── Skip link ───────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      z-index: 9999;
+      background: var(--accent);
+      color: #0f0f0f;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 10px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: top 0.15s;
+    }
+
+    .skip-link:focus { top: 0; }
+
+    /* ── Focus styles ────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* ── Section labels ──────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: #111111;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 6px;
+    }
+
+    /* ── Navigation ──────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #0f0f0f;
+      border-bottom: 1px solid #1e1e1e;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .nav-wordmark {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #e0e0e0;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: #a0a0a0;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #e0e0e0; }
+
+    .nav-ext-arrow {
+      display: inline-block;
+      margin-left: 3px;
+      font-size: 10px;
+      opacity: 0.55;
+    }
+
+    /* ── Filmography ─────────────────────────────────── */
+    #filmography {
+      margin-top: 44px;
+      background: #EFEFEA;
+      padding: 72px 40px 64px;
+    }
+
+    .filmography-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #111111;
+      margin-bottom: 16px;
+    }
+
+    .filmography-dek {
+      font-size: 18px;
+      font-weight: 400;
+      color: #333333;
+      line-height: 1.6;
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 48px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #111111;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s;
+    }
+
+    .back-home:hover { color: var(--accent); }
+
+    /* ── Work lists ──────────────────────────────────── */
+    .work-groups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 56px;
+      align-items: start;
+    }
+
+    .work-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-group {
+      border-top: 1px solid #d8d8d4;
+      padding: 24px 0;
+    }
+
+    .work-category {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: #888888;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .work-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .work-title {
+      display: block;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #111111;
+      line-height: 1.4;
+    }
+
+    .work-detail {
+      display: block;
+      font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #555555;
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      background: #080808;
+      border-top: 1px solid #1a1a1a;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      font-weight: 400;
+      color: #2a2a2a;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #2a2a2a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: #e0e0e0; }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .work-groups { grid-template-columns: 1fr; }
+      .work-col { display: contents; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      #filmography { padding: 48px 20px; }
+      .filmography-heading { font-size: 34px; }
+      footer {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 9px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ── Nav ─────────────────────────────────────────── -->
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a class="nav-wordmark" href="/" aria-label="Jonathan R. Whittaker, home">Jonathan R. Whittaker</a>
+    <ul class="nav-links">
+      <li><a href="/#featured">Selected Work</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="https://consulting.jrwhittaker.co" target="_blank" rel="noopener" aria-label="Education and Consulting, opens in new tab">Education &amp; Consulting <span class="nav-ext-arrow" aria-hidden="true">&#8599;</span></a></li>
+      <li><a href="https://faloefoundry.com" target="_blank" rel="noopener" aria-label="Faloe Foundry, opens in new tab">Faloe Foundry <span class="nav-ext-arrow" aria-hidden="true">&#8599;</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Main content ──────────────────────────────────── -->
+
+  <main id="main-content">
+
+    <section id="filmography" aria-labelledby="filmography-heading">
+
+      <span class="section-label">Filmography</span>
+      <h1 class="filmography-heading" id="filmography-heading">The complete list.</h1>
+      <p class="filmography-dek">Directing and producing credits across documentary, commercial, narrative, music video, and branded work, alongside advisory and story development. Listed newest first.</p>
+
+      <div class="work-groups">
+
+        <!-- Left column: Documentary & Broadcast, Commercial & Broadcast, Advisory -->
+        <div class="work-col">
+
+          <div class="work-group">
+            <p class="work-category">Documentary &amp; Broadcast</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Every Living Thing</span>
+                <span class="work-detail">Co-Producer &mdash; Documentary, 2026</span>
+              </li>
+              <li>
+                <span class="work-title">Mater Iniciativa</span>
+                <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
+              </li>
+              <li>
+                <span class="work-title">The Pulse</span>
+                <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
+              </li>
+              <li>
+                <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
+                <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Commercial &amp; Broadcast</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Hyundai Equus</span>
+                <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
+              </li>
+              <li>
+                <span class="work-title">Venus by Gillette</span>
+                <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
+              </li>
+              <li>
+                <span class="work-title">Modelo Especial</span>
+                <span class="work-detail">Director &mdash; Featuring Clint Dempsey, 2011</span>
+              </li>
+              <li>
+                <span class="work-title">Nissan Juke</span>
+                <span class="work-detail">Director &mdash; 2011</span>
+              </li>
+              <li>
+                <span class="work-title">Anabel Mobile</span>
+                <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
+              </li>
+              <li>
+                <span class="work-title">NBA All-Star Promo</span>
+                <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Advisory &amp; Story Development</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Kr8tiv</span>
+                <span class="work-detail">Creative Producer &mdash; Toronto, 2022 to present</span>
+              </li>
+              <li>
+                <span class="work-title">Special Order</span>
+                <span class="work-detail">Story Producer &mdash; Los Angeles, 2021 to present</span>
+              </li>
+              <li>
+                <span class="work-title">Itaú Foundation</span>
+                <span class="work-detail">Visual Storytelling Workshop Director &mdash; São Paulo, 2019 &amp; 2025</span>
+              </li>
+              <li>
+                <span class="work-title">ABS-CBN &nbsp;|&nbsp; Cinematografo</span>
+                <span class="work-detail">Creative Advisor &mdash; Manila, 2019 to 2021</span>
+              </li>
+              <li>
+                <span class="work-title">Globo</span>
+                <span class="work-detail">Production Training Lead &mdash; Rio de Janeiro, 2019</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Right column: Narrative, Music Video, Branded Content -->
+        <div class="work-col">
+
+          <div class="work-group">
+            <p class="work-category">Narrative</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Train Baby</span>
+                <span class="work-detail">Producer &mdash; Amazon Prime</span>
+              </li>
+              <li>
+                <span class="work-title">America Here We Come</span>
+                <span class="work-detail">Producer &mdash; Netflix</span>
+              </li>
+              <li>
+                <span class="work-title">A Modo Suo</span>
+                <span class="work-detail">Producer &mdash; Short Film, 2026</span>
+              </li>
+              <li>
+                <span class="work-title">Hidden Love</span>
+                <span class="work-detail">Director &mdash; Short Film, 2023</span>
+              </li>
+              <li>
+                <span class="work-title">Inhale Exhale</span>
+                <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
+              </li>
+              <li>
+                <span class="work-title">Emilia</span>
+                <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
+              </li>
+              <li>
+                <span class="work-title">Down East</span>
+                <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Music Video</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Luv U Baby</span>
+                <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
+              </li>
+              <li>
+                <span class="work-title">BuzzSessions</span>
+                <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
+              </li>
+              <li>
+                <span class="work-title">Unborn Child</span>
+                <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="work-group">
+            <p class="work-category">Branded Content</p>
+            <ul class="work-list">
+              <li>
+                <span class="work-title">Defender Bar</span>
+                <span class="work-detail">Director &mdash; 2026</span>
+              </li>
+              <li>
+                <span class="work-title">Fort Hamilton Gin</span>
+                <span class="work-detail">Director &mdash; 2025</span>
+              </li>
+              <li>
+                <span class="work-title">Dove Demia</span>
+                <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
+              </li>
+              <li>
+                <span class="work-title">Hello Oral Care</span>
+                <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a class="back-home" href="/">Back to selected work</a>
+
+    </section>
+
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+
+  <footer role="contentinfo" aria-label="Site footer">
+    <span class="footer-copy">&copy; 2026 Jonathan R. Whittaker</span>
+    <div class="footer-links">
+      <a href="https://www.imdb.com/name/nm4200264/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on IMDb (opens in new tab)">IMDb</a>
+      <a href="https://www.linkedin.com/in/jonathan-r-whittaker/" target="_blank" rel="noopener" aria-label="Jonathan R. Whittaker on LinkedIn (opens in new tab)">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>
