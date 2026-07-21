@@ -328,6 +328,10 @@
     .featured-caption .work-title  { color: #e0e0e0; }
     .featured-caption .work-detail { color: #888888; }
 
+    /* Caption title doubling as a link to the project's own site. */
+    .featured-caption a.work-title       { text-decoration: none; transition: color 0.2s; }
+    .featured-caption a.work-title:hover { color: var(--accent); }
+
     /* ── Stills ──────────────────────────────────────── */
 
     .stills-section {
@@ -742,9 +746,23 @@
 
       <div class="featured-grid">
 
-        <!-- ── Motion (Vimeo) ──────────────────────────────
-             Click loads the player in place. Reorder by moving whole <figure> blocks.
-             Swap a video: change data-vimeo + the poster image + the caption. -->
+        <!-- ── Motion ──────────────────────────────────────
+             Click loads the player in place (data-vimeo or data-youtube).
+             Reorder by moving whole <figure> blocks.
+             Swap a video: change the id + the poster image + the caption. -->
+
+        <figure class="featured-item">
+          <button class="tile-media" data-youtube="zwy3R6ZxamE"
+                  style="background-image:url('images/featured-elt.jpg')"
+                  aria-label="Play trailer: Every Living Thing">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+          <figcaption class="featured-caption">
+            <a class="work-title" href="https://eltfilm.com" target="_blank" rel="noopener"
+               aria-label="Every Living Thing, visit the film's site (opens in new tab)">Every Living Thing &#8599;</a>
+            <span class="work-detail">Co-Producer &mdash; Documentary</span>
+          </figcaption>
+        </figure>
 
         <figure class="featured-item">
           <button class="tile-media" data-vimeo="48603731"
@@ -818,20 +836,20 @@
           </figcaption>
         </figure>
 
-        <!-- ── Project links (poster tile that opens an external site) ──
-             Every Living Thing: href is set; just add a 16:9 images/featured-elt.jpg,
-             then uncomment. Absolut: awaiting its project URL + poster.
+        <!-- ── Project-link tile template (poster that opens an external site) ──
+             For a project with a site but no trailer. Absolut: awaiting URL + poster.
+             Prefer a trailer tile when one exists.
         <figure class="featured-item">
           <a class="tile-media"
-             href="https://eltfilm.com"
+             href="PROJECT_URL"
              target="_blank" rel="noopener"
-             style="background-image:url('images/featured-elt.jpg')"
-             aria-label="Every Living Thing, visit project site (opens in new tab)">
+             style="background-image:url('images/featured-absolut.jpg')"
+             aria-label="Title, visit project site (opens in new tab)">
             <span class="tile-arrow" aria-hidden="true">&#8599;</span>
           </a>
           <figcaption class="featured-caption">
-            <span class="work-title">Every Living Thing</span>
-            <span class="work-detail">Documentary</span>
+            <span class="work-title">Title</span>
+            <span class="work-detail">Role &mdash; Documentary</span>
           </figcaption>
         </figure>
         -->
@@ -872,16 +890,20 @@
             <p class="work-category">Documentary &amp; Broadcast</p>
             <ul class="work-list">
               <li>
-                <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
-                <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
+                <span class="work-title">Every Living Thing</span>
+                <span class="work-detail">Co-Producer &mdash; Documentary, 2026</span>
+              </li>
+              <li>
+                <span class="work-title">Mater Iniciativa</span>
+                <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
               </li>
               <li>
                 <span class="work-title">The Pulse</span>
                 <span class="work-detail">Segment Director &mdash; BBC, 2013 &amp; 2016</span>
               </li>
               <li>
-                <span class="work-title">Mater Iniciativa</span>
-                <span class="work-detail">Director &mdash; Docuseries featuring chef Virgilio Martinez, Cusco Peru, 2020</span>
+                <span class="work-title">Sports Illustrated Swimsuit: The 3D Experience</span>
+                <span class="work-detail">Director &mdash; Sony Pictures, 2011</span>
               </li>
             </ul>
           </div>
@@ -890,12 +912,12 @@
             <p class="work-category">Commercial &amp; Broadcast</p>
             <ul class="work-list">
               <li>
-                <span class="work-title">Venus by Gillette</span>
-                <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
-              </li>
-              <li>
                 <span class="work-title">Hyundai Equus</span>
                 <span class="work-detail">Director &mdash; VO Jeff Bridges, 2013</span>
+              </li>
+              <li>
+                <span class="work-title">Venus by Gillette</span>
+                <span class="work-detail">Director &mdash; Featuring Chrissy Teigen, 2012</span>
               </li>
               <li>
                 <span class="work-title">Modelo Especial</span>
@@ -906,12 +928,12 @@
                 <span class="work-detail">Director &mdash; 2011</span>
               </li>
               <li>
-                <span class="work-title">NBA All-Star Promo</span>
-                <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
-              </li>
-              <li>
                 <span class="work-title">Anabel Mobile</span>
                 <span class="work-detail">Director &mdash; 30-second spot, Nigerian market, 2008</span>
+              </li>
+              <li>
+                <span class="work-title">NBA All-Star Promo</span>
+                <span class="work-detail">Director &mdash; Philadelphia regional broadcast, 2002</span>
               </li>
             </ul>
           </div>
@@ -920,20 +942,20 @@
             <p class="work-category">Advisory &amp; Story Development</p>
             <ul class="work-list">
               <li>
-                <span class="work-title">Special Order</span>
-                <span class="work-detail">Story Producer &mdash; Los Angeles, 2021 to present</span>
-              </li>
-              <li>
                 <span class="work-title">Kr8tiv</span>
                 <span class="work-detail">Creative Producer &mdash; Toronto, 2022 to present</span>
               </li>
               <li>
-                <span class="work-title">ABS-CBN &nbsp;|&nbsp; Cinematografo</span>
-                <span class="work-detail">Creative Advisor &mdash; Manila, 2019 to 2021</span>
+                <span class="work-title">Special Order</span>
+                <span class="work-detail">Story Producer &mdash; Los Angeles, 2021 to present</span>
               </li>
               <li>
                 <span class="work-title">Itaú Foundation</span>
                 <span class="work-detail">Visual Storytelling Workshop Director &mdash; São Paulo, 2019 &amp; 2025</span>
+              </li>
+              <li>
+                <span class="work-title">ABS-CBN &nbsp;|&nbsp; Cinematografo</span>
+                <span class="work-detail">Creative Advisor &mdash; Manila, 2019 to 2021</span>
               </li>
               <li>
                 <span class="work-title">Globo</span>
@@ -959,14 +981,6 @@
                 <span class="work-detail">Producer &mdash; Netflix</span>
               </li>
               <li>
-                <span class="work-title">Down East</span>
-                <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
-              </li>
-              <li>
-                <span class="work-title">Inhale Exhale</span>
-                <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
-              </li>
-              <li>
                 <span class="work-title">A Modo Suo</span>
                 <span class="work-detail">Producer &mdash; Short Film, 2026</span>
               </li>
@@ -975,8 +989,16 @@
                 <span class="work-detail">Director &mdash; Short Film, 2023</span>
               </li>
               <li>
+                <span class="work-title">Inhale Exhale</span>
+                <span class="work-detail">Director &mdash; Dance film featuring Amy Yakima, 2018</span>
+              </li>
+              <li>
                 <span class="work-title">Emilia</span>
                 <span class="work-detail">Director &mdash; Big Apple Film Festival &nbsp;|&nbsp; NYC New Filmmakers Series at Film Forum, 2014</span>
+              </li>
+              <li>
+                <span class="work-title">Down East</span>
+                <span class="work-detail">Director &mdash; Scripted Pilot, NBC, 2013</span>
               </li>
             </ul>
           </div>
@@ -989,12 +1011,12 @@
                 <span class="work-detail">Director &mdash; Banky Wellington, 2017</span>
               </li>
               <li>
-                <span class="work-title">Unborn Child</span>
-                <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
-              </li>
-              <li>
                 <span class="work-title">BuzzSessions</span>
                 <span class="work-detail">Director &mdash; Son Little, Wild Honey Pie, 2015</span>
+              </li>
+              <li>
+                <span class="work-title">Unborn Child</span>
+                <span class="work-detail">Director &mdash; Banky W and Lynxxx, 2014</span>
               </li>
             </ul>
           </div>
@@ -1011,12 +1033,12 @@
                 <span class="work-detail">Director &mdash; 2025</span>
               </li>
               <li>
-                <span class="work-title">Hello Oral Care</span>
-                <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
-              </li>
-              <li>
                 <span class="work-title">Dove Demia</span>
                 <span class="work-detail">Director &mdash; Unilever, 2013 &amp; 2015</span>
+              </li>
+              <li>
+                <span class="work-title">Hello Oral Care</span>
+                <span class="work-detail">Director &mdash; National commercial, UK market, 2014</span>
               </li>
             </ul>
           </div>
@@ -1092,13 +1114,17 @@
 
   <!-- ── Scripts ──────────────────────────────────────── -->
   <script>
-    // Load the Vimeo player only on click — keeps the initial page fast.
-    document.querySelectorAll('.tile-media[data-vimeo]').forEach(function (el) {
+    // Load the player (Vimeo or YouTube) only on click — keeps the initial page fast.
+    document.querySelectorAll('.tile-media[data-vimeo], .tile-media[data-youtube]').forEach(function (el) {
       el.addEventListener('click', function () {
+        var vimeo = el.getAttribute('data-vimeo');
+        var yt    = el.getAttribute('data-youtube');
         var f = document.createElement('iframe');
         f.className = 'video-frame';
-        f.src = 'https://player.vimeo.com/video/' + el.getAttribute('data-vimeo') +
-                '?autoplay=1&color=16b5a3&title=0&byline=0&portrait=0&dnt=1';
+        f.src = vimeo
+          ? 'https://player.vimeo.com/video/' + vimeo +
+            '?autoplay=1&color=16b5a3&title=0&byline=0&portrait=0&dnt=1'
+          : 'https://www.youtube-nocookie.com/embed/' + yt + '?autoplay=1&rel=0';
         f.allow = 'autoplay; fullscreen; picture-in-picture';
         f.setAttribute('allowfullscreen', '');
         el.replaceWith(f);
