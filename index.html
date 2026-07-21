@@ -243,7 +243,9 @@
     .featured-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      /* Gap shows the section background through, dividing the panels. */
+      gap: 20px;
+      padding: 0 40px;
     }
 
     /* Framing line under the section label, so the tiles arrive with context. */
@@ -380,7 +382,9 @@
     .stills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      /* Gap shows the section background through, dividing the panels. */
+      gap: 20px;
+      padding: 0 40px 40px;
     }
 
     .stills-item {
@@ -613,6 +617,10 @@
       .featured-more { padding: 20px 20px 36px; }
 
       .stills-note { padding: 26px 20px 14px; }
+
+      .featured-grid { padding: 0 20px; }
+
+      .stills-grid { padding: 0 20px 28px; }
 
       #about {
         grid-template-columns: 1fr;
